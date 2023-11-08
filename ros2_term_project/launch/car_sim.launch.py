@@ -16,6 +16,7 @@
 #
 
 import os
+import sys
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
@@ -28,55 +29,47 @@ from launch.substitutions import LaunchConfiguration
 print(os.path.realpath(__file__))
 
 ld = LaunchDescription()
-
+car = 'PR001'
 
 def generate_launch_description():
     # configuration
     world = LaunchConfiguration('world')
     print('world =', world)
-    world_file_name = 'car_track.world'
+    world_file_name = 'self_driving_test.world'
     world = os.path.join(get_package_share_directory('ros2_term_project'),
                          'worlds', world_file_name)
     print('world file name = %s' % world)
-    car_name_in_database = 'prius_hybrid'
-    car1_name_in_model = 'PR001'
-    car2_name_in_model = 'PR002'
+
 
     # ld = LaunchDescription()
     declare_argument = DeclareLaunchArgument(
         'use_sim_time',
-        default_value='false',
+        default_value='true',
         description='Use simulation (Gazebo) clock if true')
 
     gazebo_run = ExecuteProcess(
         cmd=['gazebo', '-s', 'libgazebo_ros_factory.so', world],
         output='screen')
 
-    spawn_entity1_cmd = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-database', car_name_in_database,
-                   '-entity', car1_name_in_model,
-                   '-x', '93',
-                   '-y', '-11.7',
-                   '-Y', '-1.57'],
+    starter = Node(
+        package='ros2_term_project',
+        executable='starter',
+        name='starter',
+        arguments=[car],
         output='screen'
     )
 
-    spawn_entity2_cmd = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-database', car_name_in_database,
-                   '-entity', car2_name_in_model,
-                   '-x', '93',
-                   '-y', '-15.9',
-                   '-Y', '-1.57'],
+    controller = Node(
+        package='ros2_term_project',
+        executable='controller',
+        name='controller',
         output='screen'
     )
     ld.add_action(declare_argument)
     ld.add_action(gazebo_run)
-    ld.add_action(spawn_entity1_cmd)
-    ld.add_action(spawn_entity2_cmd)
+    ld.add_action(controller)
+    ld.add_action(starter)
+
 
     # spawn prius_hybrid
 

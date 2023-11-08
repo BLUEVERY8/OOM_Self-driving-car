@@ -7,6 +7,10 @@
   <maintainer email="ros2@test.com">ros2</maintainer>
   <license>TODO: License declaration</license>
 
+  <exec_depend>ros2_term_project</exec_depend>
+
+  <depend>custom_interface</depend>
+
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
