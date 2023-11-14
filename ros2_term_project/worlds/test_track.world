@@ -85,100 +85,124 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>20 709000000</sim_time>
-      <real_time>20 843381768</real_time>
-      <wall_time>1698937967 365742764</wall_time>
-      <iterations>20709</iterations>
+      <sim_time>169 510000000</sim_time>
+      <real_time>106 464812527</real_time>
+      <wall_time>1699970375 26120875</wall_time>
+      <iterations>106377</iterations>
       <model name='PR001'>
-        <pose>93.0005 -11.7002 0.036641 -2e-06 -0 -1.5699</pose>
+        <pose>93.0011 -11.7004 0.036641 -2e-06 -0 -1.5699</pose>
         <scale>1 1 1</scale>
+        <link name='camera_link'>
+          <pose>93.0011 -11.7004 0.036641 -2e-06 -0 -1.5699</pose>
+          <velocity>5e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
+          <acceleration>7e-06 -0.000141 -0 -2.5e-05 -0 8.9e-05</acceleration>
+          <wrench>7e-06 -0.000141 -0 0 -0 0</wrench>
+        </link>
+        <link name='camera_rgb_optical_frame'>
+          <pose>93.0012 -11.7764 0.129641 -2e-06 -0 -1.5699</pose>
+          <velocity>5e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
+          <acceleration>2e-05 -0.000136 4e-06 -2.3e-05 0 8.9e-05</acceleration>
+          <wrench>1e-06 -5e-06 0 0 -0 0</wrench>
+        </link>
         <link name='chassis'>
-          <pose>93.0005 -11.7002 0.036641 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>93.0011 -11.7004 0.036641 -2e-06 -0 -1.5699</pose>
+          <velocity>5e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
+          <acceleration>7e-06 -0.000153 -0 -6.6e-05 -0 8.9e-05</acceleration>
+          <wrench>0.008927 -0.202741 -0.000403 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel'>
-          <pose>91.5912 -12.4615 0.336644 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>91.5918 -12.4616 0.336646 -0.001375 1.7e-05 -1.56971</pose>
+          <velocity>6e-06 -1e-06 3.2e-05 2e-06 1.8e-05 0.000146</velocity>
+          <acceleration>4.3e-05 -0.000649 -1.4e-05 0.003816 7.8e-05 0.070936</acceleration>
+          <wrench>0.00047 -0.007142 -0.000151 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel'>
-          <pose>91.5898 -10.9415 0.336644 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>91.5905 -10.9416 0.336646 -0.001411 5e-06 -1.56985</pose>
+          <velocity>6e-06 -1e-06 3.1e-05 0 1.9e-05 3.4e-05</velocity>
+          <acceleration>-3.2e-05 -0.000301 1.4e-05 0.001721 -5.7e-05 0.016737</acceleration>
+          <wrench>-0.000352 -0.003314 0.00015 0 -0 0</wrench>
         </link>
         <link name='rear_axle'>
-          <pose>94.4505 -11.6989 0.336638 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>94.4511 -11.6991 0.336642 -3e-06 -5e-06 -1.5699</pose>
+          <velocity>6e-06 -1e-06 2e-05 -4e-06 -1e-06 0</velocity>
+          <acceleration>6e-06 -5e-06 -0 0.001724 0.005014 6.8e-05</acceleration>
+          <wrench>0.000175 -0.000137 -5e-06 0 -0 0</wrench>
         </link>
         <link name='rear_left_wheel'>
-          <pose>94.4512 -12.4849 0.336638 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>94.4519 -12.4851 0.336647 -0.001366 -4e-06 -1.5699</pose>
+          <velocity>5e-06 -1e-06 2.5e-05 -1e-06 1.7e-05 -0</velocity>
+          <acceleration>4.1e-05 -4e-06 0 1.9e-05 7.5e-05 6.9e-05</acceleration>
+          <wrench>0.000453 -3.9e-05 1e-06 0 -0 0</wrench>
         </link>
         <link name='rear_right_wheel'>
-          <pose>94.4498 -10.9129 0.336638 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>94.4504 -10.9131 0.336647 -0.001228 8e-06 -1.5699</pose>
+          <velocity>6e-06 -2e-06 2.5e-05 2e-06 1.7e-05 0</velocity>
+          <acceleration>-4.5e-05 -4e-06 0 2.1e-05 -8.3e-05 8.4e-05</acceleration>
+          <wrench>-0.000499 -4.2e-05 1e-06 0 -0 0</wrench>
         </link>
         <link name='steering_wheel'>
-          <pose>92.373 -12.0585 1.02489 -1.3021 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>92.3736 -12.0587 1.02488 -1.3021 0.001382 -1.56952</pose>
+          <velocity>8e-06 -0 2.1e-05 0.000996 4e-06 0.000274</velocity>
+          <acceleration>0.000115 -0.000171 -0.000269 0.162897 0.000146 0.039215</acceleration>
+          <wrench>0.000115 -0.000171 -0.000269 0 -0 0</wrench>
         </link>
       </model>
       <model name='PR002'>
-        <pose>93.0005 -15.9002 0.036641 -2e-06 -0 -1.5699</pose>
+        <pose>93.0011 -15.9004 0.036641 -2e-06 -0 -1.5699</pose>
         <scale>1 1 1</scale>
+        <link name='camera_link'>
+          <pose>93.0011 -15.9004 0.036641 -2e-06 -0 -1.5699</pose>
+          <velocity>5e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
+          <acceleration>7e-06 -0.000141 -0 -2.5e-05 -0 8.9e-05</acceleration>
+          <wrench>7e-06 -0.000141 -0 0 -0 0</wrench>
+        </link>
+        <link name='camera_rgb_optical_frame'>
+          <pose>93.0012 -15.9764 0.129641 -2e-06 -0 -1.5699</pose>
+          <velocity>5e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
+          <acceleration>2e-05 -0.000136 4e-06 -2.3e-05 0 8.9e-05</acceleration>
+          <wrench>1e-06 -5e-06 0 0 -0 0</wrench>
+        </link>
         <link name='chassis'>
-          <pose>93.0005 -15.9002 0.036641 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>93.0011 -15.9004 0.036641 -2e-06 -0 -1.5699</pose>
+          <velocity>5e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
+          <acceleration>7e-06 -0.000153 -0 -6.6e-05 -0 8.9e-05</acceleration>
+          <wrench>0.008927 -0.202741 -0.000403 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel'>
-          <pose>91.5912 -16.6615 0.336644 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>91.5918 -16.6616 0.336646 -0.001375 1.7e-05 -1.56971</pose>
+          <velocity>6e-06 -1e-06 3.2e-05 2e-06 1.8e-05 0.000146</velocity>
+          <acceleration>4.3e-05 -0.000649 -1.4e-05 0.003816 7.8e-05 0.070936</acceleration>
+          <wrench>0.00047 -0.007142 -0.000151 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel'>
-          <pose>91.5898 -15.1415 0.336644 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>91.5905 -15.1416 0.336646 -0.001411 5e-06 -1.56985</pose>
+          <velocity>6e-06 -1e-06 3.1e-05 0 1.9e-05 3.4e-05</velocity>
+          <acceleration>-3.2e-05 -0.000301 1.4e-05 0.001721 -5.7e-05 0.016737</acceleration>
+          <wrench>-0.000352 -0.003314 0.00015 0 -0 0</wrench>
         </link>
         <link name='rear_axle'>
-          <pose>94.4505 -15.8989 0.336638 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>94.4511 -15.8991 0.336642 -3e-06 -5e-06 -1.5699</pose>
+          <velocity>6e-06 -1e-06 2e-05 -4e-06 -1e-06 0</velocity>
+          <acceleration>6e-06 -5e-06 -0 0.001724 0.005014 6.8e-05</acceleration>
+          <wrench>0.000175 -0.000137 -5e-06 0 -0 0</wrench>
         </link>
         <link name='rear_left_wheel'>
-          <pose>94.4512 -16.6849 0.336638 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>94.4519 -16.6851 0.336647 -0.001366 -4e-06 -1.5699</pose>
+          <velocity>5e-06 -1e-06 2.5e-05 -1e-06 1.7e-05 -0</velocity>
+          <acceleration>4.1e-05 -4e-06 0 1.9e-05 7.5e-05 6.9e-05</acceleration>
+          <wrench>0.000453 -3.9e-05 1e-06 0 -0 0</wrench>
         </link>
         <link name='rear_right_wheel'>
-          <pose>94.4498 -15.1129 0.336638 -2e-06 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>94.4504 -15.1131 0.336647 -0.001228 8e-06 -1.5699</pose>
+          <velocity>6e-06 -2e-06 2.5e-05 2e-06 1.7e-05 0</velocity>
+          <acceleration>-4.5e-05 -4e-06 0 2.1e-05 -8.3e-05 8.4e-05</acceleration>
+          <wrench>-0.000499 -4.2e-05 1e-06 0 -0 0</wrench>
         </link>
         <link name='steering_wheel'>
-          <pose>92.373 -16.2585 1.02489 -1.3021 -0 -1.5699</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>92.3736 -16.2587 1.02488 -1.3021 0.001382 -1.56952</pose>
+          <velocity>8e-06 -0 2.1e-05 0.000996 4e-06 0.000274</velocity>
+          <acceleration>0.000115 -0.000171 -0.000269 0.162897 0.000146 0.039215</acceleration>
+          <wrench>0.000115 -0.000171 -0.000269 0 -0 0</wrench>
         </link>
       </model>
       <model name='ground'>
@@ -195,6 +219,13 @@
         <pose>0 0 10 0 -0 0</pose>
       </light>
     </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>95.2141 -11.9951 9.74599 -0 1.28764 -2.31902</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
     <model name='PR001'>
       <link name='chassis'>
         <inertial>
@@ -432,13 +463,13 @@
             </contact>
           </surface>
         </collision>
-        <collision name='windshield'>
+        <collision name='top_front'>
           <laser_retro>0</laser_retro>
           <max_contacts>10</max_contacts>
-          <pose>0 -0.875105 1.03227 0.335476 -0 0</pose>
+          <pose>0 0.161236 1.38604 0.13503 -0 0</pose>
           <geometry>
             <box>
-              <size>1.16838 1.65425 0.272347</size>
+              <size>1.27915 0.625988 0.171868</size>
             </box>
           </geometry>
           <surface>
@@ -487,13 +518,13 @@
             </contact>
           </surface>
         </collision>
-        <collision name='top_front'>
+        <collision name='windshield'>
           <laser_retro>0</laser_retro>
           <max_contacts>10</max_contacts>
-          <pose>0 0.161236 1.38604 0.13503 -0 0</pose>
+          <pose>0 -0.875105 1.03227 0.335476 -0 0</pose>
           <geometry>
             <box>
-              <size>1.27915 0.625988 0.171868</size>
+              <size>1.16838 1.65425 0.272347</size>
             </box>
           </geometry>
           <surface>
@@ -779,6 +810,8 @@
         </inertial>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <pose>0.076001 -2.2 0.7 0 0.25 -1.55</pose>
+        <gravity>1</gravity>
       </link>
       <link name='camera_rgb_optical_frame'>
         <inertial>
@@ -793,8 +826,8 @@
           </inertia>
           <mass>0.035</mass>
         </inertial>
-        <pose>0.076 0 0.093 0 -0 0</pose>
-        <sensor name='camera' type='camera'>
+        <pose>0.076001 -2.2 0.7 0 0.25 -1.55</pose>
+        <sensor name='PR001_camera' type='camera'>
           <always_on>1</always_on>
           <visualize>1</visualize>
           <update_rate>30</update_rate>
@@ -819,6 +852,7 @@
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <link name='front_left_wheel'>
         <pose>0.76 -1.41 0.3 0 -0 0</pose>
@@ -1222,7 +1256,7 @@
         </collision>
       </link>
       <link name='steering_wheel'>
-        <pose>0.357734 -0.627871 0.988243 -1.3021 0 0</pose>
+        <pose>0.357734 -0.62787 0.988243 -1.3021 0 0</pose>
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -1317,25 +1351,35 @@
         <parent>chassis</parent>
         <child>camera_link</child>
         <pose>0.073 -0.011 0.084 0 -0 0</pose>
-        <axis>
-          <xyz>0 0 1</xyz>
-          <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-          </limit>
-        </axis>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+            <suspension>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </suspension>
+          </ode>
+        </physics>
       </joint>
       <joint name='camera_rgb_joint' type='fixed'>
         <parent>camera_link</parent>
         <child>camera_rgb_optical_frame</child>
         <pose>0.003 0.011 0.009 0 -0 0</pose>
-        <axis>
-          <xyz>0 0 1</xyz>
-          <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-          </limit>
-        </axis>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+            <suspension>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </suspension>
+          </ode>
+        </physics>
       </joint>
       <joint name='front_left_combined_joint' type='universal'>
         <parent>chassis</parent>
@@ -1592,7 +1636,16 @@
         <odometry_frame>odom_demo</odometry_frame>
         <robot_base_frame>chassis</robot_base_frame>
       </plugin>
-      <pose>93.0005 -11.7002 0.036641 -2e-06 -0 -1.5699</pose>
+      <plugin name='PR001_camera_driver' filename='libgazebo_ros_camera.so'>
+        <ros>
+          <namespace>demo</namespace>
+        </ros>
+        <cameraName>PR001_camera</cameraName>
+        <imageTopicName>PR001_image_raw</imageTopicName>
+        <cameraInfoTopicName>PR001_camera_info</cameraInfoTopicName>
+        <frameName>camera_rgb_optical_frame</frameName>
+      </plugin>
+      <pose>92.999 -11.7007 0.036641 -2e-06 -0 -1.57035</pose>
     </model>
     <model name='PR002'>
       <link name='chassis'>
@@ -1666,178 +1719,13 @@
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
-        <collision name='trunk'>
+        <collision name='front_bumper'>
           <laser_retro>0</laser_retro>
           <max_contacts>10</max_contacts>
-          <pose>0 1.63706 0.88818 0 -0 0</pose>
+          <pose>0 -2 0.458488 0 -0 0</pose>
           <geometry>
             <box>
-              <size>1.78806 1.13899 0.482746</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <collision name='chassis'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 0.05 0.625 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>1.7526 2.1 0.95</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <collision name='top_rear'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 0.817696 1.36007 -0.068997 0 0</pose>
-          <geometry>
-            <box>
-              <size>1.28513 0.771189 0.226557</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <collision name='back_bumper'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 2.05445 0.57787 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>1.78165 0.512093 0.581427</size>
+              <size>1.33728 0.48 0.566691</size>
             </box>
           </geometry>
           <surface>
@@ -1941,68 +1829,13 @@
             </contact>
           </surface>
         </collision>
-        <collision name='front_bumper'>
+        <collision name='top_rear'>
           <laser_retro>0</laser_retro>
           <max_contacts>10</max_contacts>
-          <pose>0 -2 0.458488 0 -0 0</pose>
+          <pose>0 0.817696 1.36007 -0.068997 0 0</pose>
           <geometry>
             <box>
-              <size>1.33728 0.48 0.566691</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <collision name='windshield'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 -0.875105 1.03227 0.335476 -0 0</pose>
-          <geometry>
-            <box>
-              <size>1.16838 1.65425 0.272347</size>
+              <size>1.28513 0.771189 0.226557</size>
             </box>
           </geometry>
           <surface>
@@ -2106,6 +1939,171 @@
             </contact>
           </surface>
         </collision>
+        <collision name='back_bumper'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose>0 2.05445 0.57787 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.78165 0.512093 0.581427</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <collision name='chassis'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose>0 0.05 0.625 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.7526 2.1 0.95</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <collision name='trunk'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose>0 1.63706 0.88818 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.78806 1.13899 0.482746</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
         <collision name='rear_window'>
           <laser_retro>0</laser_retro>
           <max_contacts>10</max_contacts>
@@ -2113,6 +2111,61 @@
           <geometry>
             <box>
               <size>1.26785 1.11634 0.244286</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <collision name='windshield'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose>0 -0.875105 1.03227 0.335476 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.16838 1.65425 0.272347</size>
             </box>
           </geometry>
           <surface>
@@ -2178,6 +2231,8 @@
         </inertial>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <pose>0.076 -2.2 0.7 0 0.25 -1.55</pose>
+        <gravity>1</gravity>
       </link>
       <link name='camera_rgb_optical_frame'>
         <inertial>
@@ -2192,8 +2247,8 @@
           </inertia>
           <mass>0.035</mass>
         </inertial>
-        <pose>0.076 0 0.093 0 -0 0</pose>
-        <sensor name='camera' type='camera'>
+        <pose>0.076 -2.2 0.7 0 0.25 -1.55</pose>
+        <sensor name='PR002_camera' type='camera'>
           <always_on>1</always_on>
           <visualize>1</visualize>
           <update_rate>30</update_rate>
@@ -2218,9 +2273,10 @@
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <link name='front_left_wheel'>
-        <pose>0.76 -1.41 0.3 0 -0 0</pose>
+        <pose>0.760001 -1.41 0.3 0 -0 0</pose>
         <inertial>
           <mass>11</mass>
           <inertia>
@@ -2621,7 +2677,7 @@
         </collision>
       </link>
       <link name='steering_wheel'>
-        <pose>0.357734 -0.627871 0.988243 -1.3021 -0 -0</pose>
+        <pose>0.357732 -0.62787 0.988243 -1.3021 0 0</pose>
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -2716,25 +2772,35 @@
         <parent>chassis</parent>
         <child>camera_link</child>
         <pose>0.073 -0.011 0.084 0 -0 0</pose>
-        <axis>
-          <xyz>0 0 1</xyz>
-          <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-          </limit>
-        </axis>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+            <suspension>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </suspension>
+          </ode>
+        </physics>
       </joint>
       <joint name='camera_rgb_joint' type='fixed'>
         <parent>camera_link</parent>
         <child>camera_rgb_optical_frame</child>
         <pose>0.003 0.011 0.009 0 -0 0</pose>
-        <axis>
-          <xyz>0 0 1</xyz>
-          <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-          </limit>
-        </axis>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+            <suspension>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </suspension>
+          </ode>
+        </physics>
       </joint>
       <joint name='front_left_combined_joint' type='universal'>
         <parent>chassis</parent>
@@ -2991,14 +3057,16 @@
         <odometry_frame>odom_demo</odometry_frame>
         <robot_base_frame>chassis</robot_base_frame>
       </plugin>
-      <pose>93.0005 -15.9002 0.036641 -2e-06 -0 -1.5699</pose>
+      <plugin name='PR002_camera_driver' filename='libgazebo_ros_camera.so'>
+        <ros>
+          <namespace>demo</namespace>
+        </ros>
+        <cameraName>PR002_camera</cameraName>
+        <imageTopicName>PR002_image_raw</imageTopicName>
+        <cameraInfoTopicName>PR002_camera_info</cameraInfoTopicName>
+        <frameName>camera_rgb_optical_frame</frameName>
+      </plugin>
+      <pose>92.999 -15.9007 0.036641 -2e-06 -0 -1.57035</pose>
     </model>
-    <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose>129.498 -53.1898 21.1571 0 0.275643 2.35619</pose>
-        <view_controller>orbit</view_controller>
-        <projection_type>perspective</projection_type>
-      </camera>
-    </gui>
   </world>
 </sdf>

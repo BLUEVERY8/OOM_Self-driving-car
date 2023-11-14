@@ -35,7 +35,7 @@ def generate_launch_description():
     # configuration
     world = LaunchConfiguration('world')
     print('world =', world)
-    world_file_name = 'self_driving_test.world'
+    world_file_name = 'test_track.world'
     world = os.path.join(get_package_share_directory('ros2_term_project'),
                          'worlds', world_file_name)
     print('world file name = %s' % world)
@@ -65,9 +65,18 @@ def generate_launch_description():
         name='controller',
         output='screen'
     )
+
+    line_follower = Node(
+        package='ros2_term_project',
+        executable='line_follower',
+        name='line_follower',
+        output='screen'
+    )
+
     ld.add_action(declare_argument)
     ld.add_action(gazebo_run)
     ld.add_action(controller)
+    ld.add_action(line_follower)
     ld.add_action(starter)
 
 

@@ -13,24 +13,24 @@ class Controller(Node):
             'start_car',
             self.listener_callback,
             10)
+        self.state_subscription = self.create_subscription(Twist, 'state_update', self.state_listener_callback, 10)
         self.publisher_ = None
-        timer_period = 0.5  # seconds
-        self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.subscription  # prevent unused variable warning
+        self.timer = None
 
     def listener_callback(self, msg):
         car = msg.car
         self.get_logger().info('I heard: "%s"' % msg.car)
         self.publisher_ = self.create_publisher(Twist, 'demo/' + car + '_cmd_demo', 10)
 
-    def timer_callback(self):
+    def state_listener_callback(self, delta: Twist):
         msg = Twist()
-        linear = 2.0
-        angular = 0.0
-        msg.linear.x = linear
-        msg.angular.z = angular
+        self.get_logger().info('I heard %f' % delta.angular.z)
+        msg.angular.z = delta.angular.z
+        if delta.angular.z != 0:
+            msg.linear.x = 1.0
+        else:
+            msg.linear.x = 2.0
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: linear: "%s"' % linear)
 
 
 def main(args=None):
