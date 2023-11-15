@@ -34,6 +34,13 @@ class LineTracker:
         def _delta(self):
             return self._delta
 
-        def main():
-            tracker = LineTracker()
+def main():
+    tracker = LineTracker()
+    import time
+    for i in range(100):
+        img = cv2.imread('../worlds/sample.png')
+        tracker.process(img)
+        time.sleep(0.1)
 
+if __name__ == '__main__':
+    main()

@@ -848,6 +848,21 @@
               <stddev>0.007</stddev>
             </noise>
           </camera>
+          <plugin name='PR001_camera_driver' filename='libgazebo_ros_camera.so'>
+            <ros>
+              <namespace>demo</namespace>
+              <remapping>image_raw:=PR001_image_raw</remapping>
+              <remapping>camera_info:=PR001_camera_info</remapping>
+            </ros>
+            <cameraName>PR001_camera</cameraName>
+            <frameName>camera_rgb_optical_frame</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
         </sensor>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
@@ -1639,11 +1654,17 @@
       <plugin name='PR001_camera_driver' filename='libgazebo_ros_camera.so'>
         <ros>
           <namespace>demo</namespace>
+          <remapping>image_raw:=PR001_image_raw</remapping>
+          <remapping>camera_info:=PR001_camera_info</remapping>
         </ros>
         <cameraName>PR001_camera</cameraName>
-        <imageTopicName>PR001_image_raw</imageTopicName>
-        <cameraInfoTopicName>PR001_camera_info</cameraInfoTopicName>
         <frameName>camera_rgb_optical_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
       </plugin>
       <pose>92.999 -11.7007 0.036641 -2e-06 -0 -1.57035</pose>
     </model>
@@ -2269,6 +2290,21 @@
               <stddev>0.007</stddev>
             </noise>
           </camera>
+          <plugin name='PR002_camera_driver' filename='libgazebo_ros_camera.so'>
+            <ros>
+              <namespace>demo</namespace>
+              <remapping>image_raw:=PR002_image_raw</remapping>
+              <remapping>camera_info:=PR002_camera_info</remapping>
+            </ros>
+            <cameraName>PR002_camera</cameraName>
+            <frameName>camera_rgb_optical_frame</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
         </sensor>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
@@ -3060,11 +3096,17 @@
       <plugin name='PR002_camera_driver' filename='libgazebo_ros_camera.so'>
         <ros>
           <namespace>demo</namespace>
+          <remapping>image_raw:=PR002_image_raw</remapping>
+          <remapping>camera_info:=PR002_camera_info</remapping>
         </ros>
         <cameraName>PR002_camera</cameraName>
-        <imageTopicName>PR002_image_raw</imageTopicName>
-        <cameraInfoTopicName>PR002_camera_info</cameraInfoTopicName>
         <frameName>camera_rgb_optical_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
       </plugin>
       <pose>92.999 -15.9007 0.036641 -2e-06 -0 -1.57035</pose>
     </model>
