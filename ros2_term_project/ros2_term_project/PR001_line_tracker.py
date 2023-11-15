@@ -1,7 +1,7 @@
 import cv2
 import numpy
 
-class LineTracker:
+class PR001LineTracker:
     def __init__(self):
         self._delta = 0.0
 
@@ -14,16 +14,20 @@ class LineTracker:
 
         h, w, d = img.shape
         search_top = int(1 * h / 4)
-        search_bot = int(1 * h / 4 + 20)
-        mask[0:search_top, 0:w] = 0
-        mask[search_bot:h, 0:w] = 0
+        search_bot = int(1 * h / 4 + 100)
+        mask[0:h, 0:int(w/2)] = 0
+        mask[0:h, int(9*w/10):w] = 0
+        mask[0:search_top, int(w/2):int(9*w/10)] = 0
+        mask[search_bot:h, int(w / 2):int(9*w/10)] = 0
         M = cv2.moments(mask)
         if M['m00'] > 0:
             cx = int(M['m10'] / M['m00'])
             cy = int(M['m01'] / M['m00'])
             cv2.circle(img, (cx, cy), 20, (0, 0, 255), -1)
             # BEGIN CONTROL
-            err = cx - w / 2
+            err = cx - w
+            if (cy - 2 * h / 3) < 0:
+                err -= (cy - 2 * h / 3)
             self._delta = err
             # END CONTROL
         cv2.imshow("window", img)
@@ -35,10 +39,10 @@ class LineTracker:
             return self._delta
 
 def main():
-    tracker = LineTracker()
+    tracker = PR001LineTracker()
     import time
     for i in range(100):
-        img = cv2.imread('../worlds/sample.png')
+        img = cv2.imread('../worlds/sample.jpg')
         tracker.process(img)
         time.sleep(0.1)
 

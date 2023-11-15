@@ -29,7 +29,7 @@ from launch.substitutions import LaunchConfiguration
 print(os.path.realpath(__file__))
 
 ld = LaunchDescription()
-car = 'PR001'
+car = 'PR002'
 
 def generate_launch_description():
     # configuration
@@ -70,6 +70,7 @@ def generate_launch_description():
         package='ros2_term_project',
         executable='line_follower',
         name='line_follower',
+        arguments=[car],
         output='screen'
     )
 

@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-
+import time
 from custom_interface.msg import Target
 from geometry_msgs.msg import Twist
 
@@ -13,7 +13,7 @@ class Controller(Node):
             'start_car',
             self.listener_callback,
             10)
-        self.state_subscription = self.create_subscription(Twist, 'state_update', self.state_listener_callback, 10)
+        self.state_subscription = None
         self.publisher_ = None
         self.timer = None
 
@@ -21,15 +21,20 @@ class Controller(Node):
         car = msg.car
         self.get_logger().info('I heard: "%s"' % msg.car)
         self.publisher_ = self.create_publisher(Twist, 'demo/' + car + '_cmd_demo', 10)
+        twist = Twist()
+        twist.linear.x = 6.0
+        self.publisher_.publish(twist)
+        time.sleep(8)
+        self.create_subscription(Twist, 'state_update', self.state_listener_callback, 10)
 
     def state_listener_callback(self, delta: Twist):
         msg = Twist()
         self.get_logger().info('I heard %f' % delta.angular.z)
         msg.angular.z = delta.angular.z
-        if delta.angular.z != 0:
-            msg.linear.x = 1.0
+        if delta.angular.z > 0.1:
+            msg.linear.x = 3.0
         else:
-            msg.linear.x = 2.0
+            msg.linear.x = 5.0
         self.publisher_.publish(msg)
 
 
