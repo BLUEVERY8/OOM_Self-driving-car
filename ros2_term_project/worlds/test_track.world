@@ -869,6 +869,81 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
+      <link name='front_camera_link'>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0.076 -2.2 0.7 0 0.25 -1.55</pose>
+        <gravity>1</gravity>
+      </link>
+      <link name='front_camera_rgb_optical_frame'>
+        <inertial>
+          <pose>0.076 0 0.093 0 -0 0</pose>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+          <mass>0.035</mass>
+        </inertial>
+        <pose>0.076 -2.2 0.7 0 0.25 -1.55</pose>
+        <sensor name='PR002_front_camera' type='camera'>
+          <always_on>1</always_on>
+          <visualize>1</visualize>
+          <update_rate>30</update_rate>
+          <camera name='picam'>
+            <horizontal_fov>1.0856</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.03</near>
+              <far>100</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name='PR002_front_camera_driver' filename='libgazebo_ros_camera.so'>
+            <ros>
+              <namespace>demo</namespace>
+              <remapping>image_raw:=PR002_image_raw</remapping>
+              <remapping>camera_info:=PR002_camera_info</remapping>
+            </ros>
+            <cameraName>PR002_front_camera</cameraName>
+            <frameName>front_camera_rgb_optical_frame</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
       <link name='front_left_wheel'>
         <pose>0.760002 -1.41 0.3 0 -0 0</pose>
         <inertial>
@@ -1396,6 +1471,40 @@
           </ode>
         </physics>
       </joint>
+      <joint name='front_camera_joint' type='fixed'>
+        <parent>chassis</parent>
+        <child>front_camera_link</child>
+        <pose>0.073 -0.011 0.084 0 -0 0</pose>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+            <suspension>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </suspension>
+          </ode>
+        </physics>
+      </joint>
+      <joint name='front_camera_rgb_joint' type='fixed'>
+        <parent>front_camera_link</parent>
+        <child>front_camera_rgb_optical_frame</child>
+        <pose>0.003 0.011 0.009 0 -0 0</pose>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+            <suspension>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </suspension>
+          </ode>
+        </physics>
+      </joint>
       <joint name='front_left_combined_joint' type='universal'>
         <parent>chassis</parent>
         <child>front_left_wheel</child>
@@ -1659,6 +1768,21 @@
         </ros>
         <cameraName>PR002_camera</cameraName>
         <frameName>camera_rgb_optical_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+      <plugin name='PR002_front_camera_driver' filename='libgazebo_ros_camera.so'>
+        <ros>
+          <namespace>demo</namespace>
+          <remapping>image_raw:=PR002_image_raw</remapping>
+          <remapping>camera_info:=PR002_camera_info</remapping>
+        </ros>
+        <cameraName>PR002_front_camera</cameraName>
+        <frameName>front_camera_rgb_optical_frame</frameName>
         <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>
@@ -2311,6 +2435,81 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
+      <link name='front_camera_link'>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0.076001 -2.2 0.7 0 0.25 -1.55</pose>
+        <gravity>1</gravity>
+      </link>
+      <link name='front_camera_rgb_optical_frame'>
+        <inertial>
+          <pose>0.076 0 0.093 0 -0 0</pose>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+          <mass>0.035</mass>
+        </inertial>
+        <pose>0.076001 -2.2 0.7 0 0.25 -1.55</pose>
+        <sensor name='PR001_front_camera' type='camera'>
+          <always_on>1</always_on>
+          <visualize>1</visualize>
+          <update_rate>30</update_rate>
+          <camera name='picam'>
+            <horizontal_fov>1.0856</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.03</near>
+              <far>100</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name='PR001_front_camera_driver' filename='libgazebo_ros_camera.so'>
+            <ros>
+              <namespace>demo</namespace>
+              <remapping>image_raw:=PR001_image_raw</remapping>
+              <remapping>camera_info:=PR001_camera_info</remapping>
+            </ros>
+            <cameraName>PR001_front_camera</cameraName>
+            <frameName>front_camera_rgb_optical_frame</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
       <link name='front_left_wheel'>
         <pose>0.76 -1.41 0.3 0 -0 0</pose>
         <inertial>
@@ -2838,6 +3037,40 @@
           </ode>
         </physics>
       </joint>
+      <joint name='front_camera_joint' type='fixed'>
+        <parent>chassis</parent>
+        <child>front_camera_link</child>
+        <pose>0.073 -0.011 0.084 0 -0 0</pose>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+            <suspension>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </suspension>
+          </ode>
+        </physics>
+      </joint>
+      <joint name='front_camera_rgb_joint' type='fixed'>
+        <parent>front_camera_link</parent>
+        <child>front_camera_rgb_optical_frame</child>
+        <pose>0.003 0.011 0.009 0 -0 0</pose>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+            <suspension>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </suspension>
+          </ode>
+        </physics>
+      </joint>
       <joint name='front_left_combined_joint' type='universal'>
         <parent>chassis</parent>
         <child>front_left_wheel</child>
@@ -3101,6 +3334,21 @@
         </ros>
         <cameraName>PR001_camera</cameraName>
         <frameName>camera_rgb_optical_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+      <plugin name='PR001_front_camera_driver' filename='libgazebo_ros_camera.so'>
+        <ros>
+          <namespace>demo</namespace>
+          <remapping>image_raw:=PR001_image_raw</remapping>
+          <remapping>camera_info:=PR001_camera_info</remapping>
+        </ros>
+        <cameraName>PR001_front_camera</cameraName>
+        <frameName>front_camera_rgb_optical_frame</frameName>
         <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>
