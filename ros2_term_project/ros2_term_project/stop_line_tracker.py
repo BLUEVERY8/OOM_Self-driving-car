@@ -1,9 +1,9 @@
 import cv2
 import numpy
 
-class PR001LineTracker:
+class StopLineTracker:
     def __init__(self):
-        self._delta = 0.0
+        self._delta = None
 
     def process(self, img: numpy.ndarray) -> None:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -16,6 +16,8 @@ class PR001LineTracker:
         search_top = int(h / 3)
 
         mask[0:search_top, 0:w] = 0
+        mask[0:h, 0:int(w / 3)] = 0
+        mask[0:h, int(2*w/3):w] = 0
 
         M = cv2.moments(mask)
         if M['m00'] > 0:
@@ -23,11 +25,11 @@ class PR001LineTracker:
             cy = int(M['m01'] / M['m00'])
             cv2.circle(img, (cx, cy), 20, (0, 0, 255), -1)
             # BEGIN CONTROL
-            err = cy - 2*h/3
+            err = abs(cx - w / 2)
             self._delta = err
             # END CONTROL
-        cv2.imshow("window", img)
-        cv2.imshow("mask", mask)
+        cv2.imshow("front_window", img)
+        cv2.imshow("front_mask", mask)
         cv2.waitKey(3)
 
         @property
@@ -35,7 +37,7 @@ class PR001LineTracker:
             return self._delta
 
 def main():
-    tracker = PR001LineTracker()
+    tracker = StopLineTracker()
     import time
     for i in range(100):
         img = cv2.imread('../worlds/sample.jpg')

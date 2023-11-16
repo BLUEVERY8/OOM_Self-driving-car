@@ -1,22 +1,23 @@
 import cv2
 import numpy
 
-class PR002LineTracker:
+class EndLineTracker:
     def __init__(self):
-        self._delta = 0.0
+        self._delta = None
 
     def process(self, img: numpy.ndarray) -> None:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-        lower_white = numpy.array([0, 0, 200])
-        upper_white = numpy.array([180, 255, 255])
+        lower_yellow = numpy.array([20, 100, 100])
+        upper_yellow = numpy.array([30, 255, 250])
 
-        mask = cv2.inRange(hsv, lower_white, upper_white)
+        mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
 
         h, w, d = img.shape
-        search_top = int(1 * h / 3)
+        search_top = int(h / 3)
 
         mask[0:search_top, 0:w] = 0
-
+        mask[0:h, 0:int(w / 3)] = 0
+        mask[0:h, int(2 * w / 3):w] = 0
 
         M = cv2.moments(mask)
         if M['m00'] > 0:
@@ -24,12 +25,10 @@ class PR002LineTracker:
             cy = int(M['m01'] / M['m00'])
             cv2.circle(img, (cx, cy), 20, (0, 0, 255), -1)
             # BEGIN CONTROL
-            err = cy - 2*h/3
-
+            err = abs(cx - w/2)
             self._delta = err
             # END CONTROL
-        cv2.imshow("window", img)
-        cv2.imshow("mask", mask)
+
         cv2.waitKey(3)
 
         @property
@@ -37,7 +36,7 @@ class PR002LineTracker:
             return self._delta
 
 def main():
-    tracker = PR002LineTracker()
+    tracker = EndLineTracker()
     import time
     for i in range(100):
         img = cv2.imread('../worlds/sample.jpg')
