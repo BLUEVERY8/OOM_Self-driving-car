@@ -24,17 +24,17 @@ class Controller(Node):
         twist = Twist()
         twist.linear.x = 6.0
         self.publisher_.publish(twist)
-        time.sleep(8)
+        time.sleep(3)
         self.create_subscription(Twist, 'state_update', self.state_listener_callback, 10)
 
     def state_listener_callback(self, delta: Twist):
         msg = Twist()
         self.get_logger().info('I heard %f' % delta.angular.z)
         msg.angular.z = delta.angular.z
-        if delta.angular.z > 0.1:
+        if delta.angular.z > 0.01:
             msg.linear.x = 3.0
         else:
-            msg.linear.x = 5.0
+            msg.linear.x = 6.0
         self.publisher_.publish(msg)
 
 

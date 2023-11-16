@@ -29,7 +29,7 @@ from launch.substitutions import LaunchConfiguration
 print(os.path.realpath(__file__))
 
 ld = LaunchDescription()
-car = 'PR002'
+car = 'PR001'
 
 def generate_launch_description():
     # configuration

@@ -21,7 +21,7 @@ class PR001LineFollower(Node):
         img = self.bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
         self.line_tracker.process(img)
         msg = Twist()
-        msg.angular.z = (-1) * self.line_tracker._delta / 400
+        msg.angular.z = (-1) * self.line_tracker._delta / 150
         self.get_logger().info('angular.z = %f' % msg.angular.z)
         self._publisher.publish(msg)
 
@@ -38,7 +38,7 @@ class PR002LineFollower(Node):
         img = self.bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
         self.line_tracker.process(img)
         msg = Twist()
-        msg.angular.z = (-1) * self.line_tracker._delta / 400
+        msg.angular.z = ((-1) * self.line_tracker._delta / 150)
         self.get_logger().info('angular.z = %f' % msg.angular.z)
         self._publisher.publish(msg)
 
