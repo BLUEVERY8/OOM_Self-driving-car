@@ -29,7 +29,8 @@ class LineFollower(Node):
             self._front_image_subscription = self.create_subscription(Image, '/demo/PR002_front_camera/image_raw',
                                                                       self.front_image_callback, 10)
         self._publisher = self.create_publisher(Twist, 'state_update', 10)
-        self._issue_publisher = self.create_publisher(String, 'issue_update', 10)
+        self.stop_issue_publisher = self.create_publisher(String, 'stop_issue_update', 10)
+        self.end_issue_publisher = self.create_publisher(String, 'end_issue_update', 10)
 
     def image_callback(self, image: Image):
         img = self.bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
@@ -44,13 +45,17 @@ class LineFollower(Node):
         self.stop_line_tracker.process(img)
         self.end_line_tracker.process(img)
         msg = String()
-        if self.stop_line_tracker._delta < 300:
-            msg.data = '정지'
-            self.get_logger().info('정지')
-        elif self.end_line_tracker._delta < 300:
+        if self.end_line_tracker._delta is not None and self.end_line_tracker._delta < 3:
             msg.data = '종료'
             self.get_logger().info('종료')
-        self._issue_publisher.publish(msg)
+            self.end_issue_publisher.publish(msg)
+            self.destroy_node()
+            return
+        if self.stop_line_tracker._delta is not None and self.stop_line_tracker._delta < 0.005:
+            msg.data = '정지'
+            self.get_logger().info('정지')
+            self.stop_issue_publisher.publish(msg)
+
 
 def main(args=None):
     rclpy.init(args=args)

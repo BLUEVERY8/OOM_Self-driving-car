@@ -18,6 +18,7 @@ class Controller(Node):
         self.issue_subscription = None
         self.publisher_ = None
         self.stop = False
+        self.turn = False
 
     def listener_callback(self, msg):
         car = msg.car
@@ -28,37 +29,46 @@ class Controller(Node):
         self.publisher_.publish(twist)
         time.sleep(3)
         self.state_subscription = self.create_subscription(Twist, 'state_update', self.state_listener_callback, 10)
-        self.issue_subscription = self.create_subscription(String, 'issue_update', self.issue_listener_callback, 10)
+        self.stop_subscription = self.create_subscription(String, 'stop_issue_update', self.stop_listener_callback, 10)
+        self.end_subscription = self.create_subscription(String, 'end_issue_update', self.end_listener_callback, 10)
 
     def state_listener_callback(self, delta: Twist):
         if not self.stop:
             msg = Twist()
             self.get_logger().info('I heard %f' % delta.angular.z)
             msg.angular.z = delta.angular.z
-            if delta.angular.z > 0.01:
+            if delta.angular.z > 0.02:
+                self.turn = True
                 msg.linear.x = 3.0
             else:
+                self.turn = False
                 msg.linear.x = 6.0
             self.publisher_.publish(msg)
 
-    def issue_listener_callback(self, issue: String):
+    def stop_listener_callback(self, issue: String):
         msg = Twist()
-        if issue == '정지':
+
+        if not self.turn and issue.data == '정지':
+            self.stop = True
             msg.linear.x = 0.0
             msg.angular.z = 0.0
-            self.stop = True
+
             self.publisher_.publish(msg)
-            time.sleep(4)
+            time.sleep(3)
             self.stop = False
-            msg.linear.x = 6.0
-            self.publisher_.publish(msg)
-        elif issue == '종료':
+
+    def end_listener_callback(self, issue: String):
+        msg = Twist()
+
+        if issue.data == '종료':
+            self.stop = True
             msg.linear.x = 0.0
             msg.angular.z = 0.0
-            self.stop = True
+
             self.publisher_.publish(msg)
             self.destroy_node()
-            rclpy.shutdown()
+            return
+
 
 
 def main(args=None):

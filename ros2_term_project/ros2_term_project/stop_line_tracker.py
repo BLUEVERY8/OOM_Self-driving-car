@@ -13,11 +13,13 @@ class StopLineTracker:
         mask = cv2.inRange(hsv, lower_white, upper_white)
 
         h, w, d = img.shape
-        search_top = int(h / 3)
+        search_top = int(7*h / 20)
+        search_bot = int(h/2)
 
         mask[0:search_top, 0:w] = 0
-        mask[0:h, 0:int(w / 3)] = 0
-        mask[0:h, int(2*w/3):w] = 0
+        mask[search_bot:h, 0:w] = 0
+        mask[0:h, 0:int(2 * w / 5)] = 0
+        mask[0:h, int(3 * w / 5):w] = 0
 
         M = cv2.moments(mask)
         if M['m00'] > 0:
