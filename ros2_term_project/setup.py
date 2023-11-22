@@ -25,7 +25,8 @@ setup(
     entry_points={
         'console_scripts': [
             'starter=ros2_term_project.starter:main',
-            'controller=ros2_term_project.controller:main'
+            'controller=ros2_term_project.controller:main',
+            'line_follower=ros2_term_project.line_follower:main'
         ],
     },
 )

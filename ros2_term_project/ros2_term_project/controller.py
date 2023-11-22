@@ -1,8 +1,10 @@
 import rclpy
 from rclpy.node import Node
-
+import time
 from custom_interface.msg import Target
 from geometry_msgs.msg import Twist
+from std_msgs.msg import String
+from nav_msgs.msg import Odometry
 
 class Controller(Node):
 
@@ -13,24 +15,90 @@ class Controller(Node):
             'start_car',
             self.listener_callback,
             10)
+        self.state_subscription = None
+        self.issue_subscription = None
         self.publisher_ = None
-        timer_period = 0.5  # seconds
-        self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.subscription  # prevent unused variable warning
+        self.stop = False
+        self.count = 0
+        #self.x = 0.0
 
     def listener_callback(self, msg):
         car = msg.car
         self.get_logger().info('I heard: "%s"' % msg.car)
         self.publisher_ = self.create_publisher(Twist, 'demo/' + car + '_cmd_demo', 10)
+        #self.odom_subscription = self.create_subscription(Odometry, 'demo/' + car + '_odom_demo', self.odom_listener_callback, 10)
+        twist = Twist()
+        twist.linear.x = 6.0
+        self.publisher_.publish(twist)
+        time.sleep(3)
+        self.state_subscription = self.create_subscription(Twist, 'state_update', self.state_listener_callback, 10)
+        self.stop_subscription = self.create_subscription(String, 'stop_issue_update', self.stop_listener_callback, 10)
+        self.end_subscription = self.create_subscription(String, 'end_issue_update', self.end_listener_callback, 10)
 
-    def timer_callback(self):
+    def state_listener_callback(self, delta: Twist):
+        if not self.stop:
+            msg = Twist()
+            if delta.angular.z > 1.0:
+                delta.angular.z = 1.0
+            msg.angular.z = delta.angular.z
+            if delta.angular.z > 0.3:
+                msg.linear.x = 3.0
+            else:
+                msg.linear.x = 6.0
+            self.publisher_.publish(msg)
+
+    def stop_listener_callback(self, issue: String):
         msg = Twist()
-        linear = 2.0
-        angular = 0.0
-        msg.linear.x = linear
-        msg.angular.z = angular
-        self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: linear: "%s"' % linear)
+        self.get_logger().info('count: %d' % self.count)
+        if not self.stop and issue.data == '정지' and self.count < 2:
+            self.stop = True
+            self.count += 1
+            self.get_logger().info('정지')
+            # for i in range(20):
+            #     msg.linear.x = 0.0
+            #     msg.angular.z = 0.0
+            #     self.publisher_.publish(msg)
+            #     time.sleep(0.1)
+            if self.count == 2:
+                for i in range(400):
+                    msg.linear.x = 1.0
+
+                    self.publisher_.publish(msg)
+                    time.sleep(0.01)
+            else:
+                for i in range(400):
+                    msg.linear.x = 0.0
+
+                    self.publisher_.publish(msg)
+                    time.sleep(0.01)
+
+            self.stop = False
+            for i in range(30):
+                msg.linear.x = 6.0
+                self.publisher_.publish(msg)
+                time.sleep(0.1)
+
+
+    def end_listener_callback(self, issue: String):
+        msg = Twist()
+
+        if issue.data == '종료':
+            self.stop = True
+            for i in range(20):
+                msg.linear.x = 1.3
+                self.publisher_.publish(msg)
+                time.sleep(0.1)
+            msg.linear.x = 0.0
+            msg.angular.z = 0.0
+
+            self.publisher_.publish(msg)
+            self.destroy_node()
+            return
+
+    def odom_listener_callback(self, odom: Odometry):
+        twist = odom.twist
+        self.x = twist.twist.linear.x
+        self.get_logger().info('I heard odom.x: %f' % self.x)
 
 
 def main(args=None):
