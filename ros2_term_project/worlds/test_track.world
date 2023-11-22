@@ -85,10 +85,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>2950 146000000</sim_time>
-      <real_time>24 326597632</real_time>
-      <wall_time>1700483338 426138839</wall_time>
-      <iterations>23461</iterations>
+      <sim_time>2966 24000000</sim_time>
+      <real_time>15 945516347</real_time>
+      <wall_time>1700665704 37177907</wall_time>
+      <iterations>15878</iterations>
       <model name='Hill'>
         <pose>82.4255 -61.1568 0.05 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -214,143 +214,155 @@
         </link>
       </model>
       <model name='PR001'>
-        <pose>92.0483 -11.6191 0.036641 -2e-06 0 -1.56881</pose>
+        <pose>92.807 -11.6186 0.036641 -2e-06 -0 -1.56686</pose>
         <scale>1 1 1</scale>
         <link name='camera_link'>
-          <pose>90.5501 -12.5221 0.736643 -2e-06 0.3 -1.56881</pose>
-          <velocity>7e-06 -1e-06 2.5e-05 0 3e-06 0</velocity>
-          <acceleration>-0.000188 0.000612 -6.3e-05 6.4e-05 -4e-06 -0.000223</acceleration>
-          <wrench>-0.000188 0.000612 -6.3e-05 0 -0 0</wrench>
+          <pose>91.3105 -12.5245 0.736644 -2e-06 0.3 -1.56686</pose>
+          <velocity>0.276588 -0.00333 0.000727 -0.000789 1.8e-05 0.00182</velocity>
+          <acceleration>-0.187486 -2.58391 1.44092 -1.63412 -0.009065 0.85067</acceleration>
+          <wrench>-0.187486 -2.58391 1.44092 0 -0 0</wrench>
         </link>
         <link name='camera_rgb_optical_frame'>
-          <pose>90.5501 -12.5221 0.736643 -2e-06 0.3 -1.56881</pose>
-          <velocity>7e-06 -1e-06 2.5e-05 0 3e-06 0</velocity>
-          <acceleration>-0.000211 0.000607 -6.9e-05 6.4e-05 -3e-06 -0.000221</acceleration>
-          <wrench>-7e-06 2.1e-05 -2e-06 0 -0 0</wrench>
+          <pose>91.3105 -12.5245 0.736644 -2e-06 0.3 -1.56686</pose>
+          <velocity>0.276584 -0.003336 0.000738 -0.000771 2.7e-05 0.001836</velocity>
+          <acceleration>-0.106634 -2.49103 1.62259 -1.59605 0.009667 0.886625</acceleration>
+          <wrench>-0.003732 -0.087186 0.056791 0 -0 0</wrench>
         </link>
         <link name='chassis'>
-          <pose>92.0483 -11.6191 0.036641 -2e-06 0 -1.56881</pose>
-          <velocity>4e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
-          <acceleration>1.7e-05 0.000341 6e-06 0.000336 -1e-06 -0.000226</acceleration>
-          <wrench>0.023171 0.451724 0.008486 0 -0 0</wrench>
+          <pose>92.807 -11.6186 0.036641 -2e-06 -0 -1.56686</pose>
+          <velocity>0.274949 -0.001251 -0 -0.000788 1.5e-05 0.001798</velocity>
+          <acceleration>-0.908911 -2.08024 0.000427 -0.833056 -0.025071 0.805435</acceleration>
+          <wrench>-1205.22 -2758.4 0.565729 0 -0 0</wrench>
         </link>
         <link name='front_camera_link'>
-          <pose>89.8485 -11.6995 0.736645 0 0.249998 -3.11881</pose>
-          <velocity>7e-06 -1e-06 2.7e-05 0 3e-06 0</velocity>
-          <acceleration>-1e-06 0.00078 -9e-06 6.5e-05 -5e-06 -0.000222</acceleration>
-          <wrench>-1e-06 0.00078 -9e-06 0 -0 0</wrench>
+          <pose>90.6073 -11.7033 0.736645 0 0.249998 -3.11686</pose>
+          <velocity>0.275113 -0.004507 0.000101 -0.000787 1.5e-05 0.001832</velocity>
+          <acceleration>-0.841204 -2.97899 0.103971 -1.62948 -0.01425 0.873828</acceleration>
+          <wrench>-0.841204 -2.97899 0.103971 0 -0 0</wrench>
         </link>
         <link name='front_camera_rgb_optical_frame'>
-          <pose>89.8485 -11.6995 0.736645 0 0.249998 -3.11881</pose>
-          <velocity>7e-06 -1e-06 2.7e-05 0 4e-06 0</velocity>
-          <acceleration>-2e-06 0.000797 -1e-05 6.9e-05 -4e-06 -0.000216</acceleration>
-          <wrench>-0 2.8e-05 -0 0 -0 0</wrench>
+          <pose>90.6073 -11.7033 0.736645 0 0.249998 -3.11686</pose>
+          <velocity>0.275113 -0.004497 0.000102 -0.00075 1.4e-05 0.001887</velocity>
+          <acceleration>-0.839328 -2.94142 0.106553 -1.55622 -0.010878 0.985799</acceleration>
+          <wrench>-0.029376 -0.10295 0.003729 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel'>
-          <pose>90.6398 -12.3819 0.336646 -0.049985 1.5e-05 -1.56864</pose>
-          <velocity>6e-06 1e-06 3.2e-05 -6e-06 1.8e-05 -0.000272</velocity>
-          <acceleration>-9.4e-05 -0.000213 -8.1e-05 0.0013 -0.000169 0.103646</acceleration>
-          <wrench>-0.001039 -0.002341 -0.000889 0 -0 0</wrench>
+          <pose>91.4 -12.3841 0.336646 -2.12813 0.028668 -1.23523</pose>
+          <velocity>0.276317 -0.008461 -2.4e-05 -0.320765 0.886632 0.473242</velocity>
+          <acceleration>-0.337652 -14.3709 -0.082941 1.89435 -0.104882 -3.00225</acceleration>
+          <wrench>-3.71417 -158.08 -0.912354 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel'>
-          <pose>90.6368 -10.8619 0.336646 -0.051354 6e-06 -1.56875</pose>
-          <velocity>6e-06 -0 3.2e-05 -2e-06 1.9e-05 -9.6e-05</velocity>
-          <acceleration>0.000113 0.000215 8.3e-05 -0.001137 0.000202 0.038187</acceleration>
-          <wrench>0.001247 0.002367 0.000915 0 -0 0</wrench>
+          <pose>91.394 -10.8642 0.336646 -2.1191 -0.028668 -1.89787</pose>
+          <velocity>0.273634 -0.008906 8.2e-05 0.030331 0.391795 -0.545856</velocity>
+          <acceleration>-1.45954 -13.5122 0.117084 0.686895 0.030345 1.86858</acceleration>
+          <wrench>-16.055 -148.635 1.28792 0 -0 0</wrench>
+        </link>
+        <link name='hokuyo_link'>
+          <pose>90.6073 -11.7033 0.786645 -0 -2e-06 -3.11686</pose>
+          <velocity>0.275112 -0.00463 0.0001 -0.00079 1.5e-05 0.001802</velocity>
+          <acceleration>-0.844823 -3.22628 0.107827 -1.63608 -0.015238 0.813604</acceleration>
+          <wrench>-8e-06 -3.2e-05 1e-06 0 -0 0</wrench>
         </link>
         <link name='rear_axle'>
-          <pose>93.4983 -11.6162 0.336642 -3e-06 -4e-06 -1.56881</pose>
-          <velocity>5e-06 -1e-06 1.9e-05 -4e-06 -1e-06 0</velocity>
-          <acceleration>2.1e-05 -3.3e-05 1.3e-05 0.001943 -0.009303 -0.000189</acceleration>
-          <wrench>0.000624 -0.001002 0.000386 0 -0 0</wrench>
+          <pose>94.257 -11.6129 0.336641 -2e-06 -5e-06 -1.56686</pose>
+          <velocity>0.27485 0.001572 -3e-06 -7.9e-05 1.8e-05 0.001748</velocity>
+          <acceleration>-0.888112 -1.00834 0.011565 0.370405 -0.579218 0.662651</acceleration>
+          <wrench>-26.6434 -30.2502 0.346941 0 -0 0</wrench>
         </link>
         <link name='rear_left_wheel'>
-          <pose>93.4999 -12.4022 0.336647 -0.049516 -4e-06 -1.56881</pose>
-          <velocity>5e-06 -1e-06 2.5e-05 -1e-06 1.7e-05 -0</velocity>
-          <acceleration>-8.4e-05 -2.6e-05 7e-06 0.000147 -0.000152 -0.000189</acceleration>
-          <wrench>-0.000929 -0.00029 8.2e-05 0 -0 0</wrench>
+          <pose>94.2601 -12.3989 0.336647 2.41701 -6e-06 -1.56686</pose>
+          <velocity>0.276173 0.001463 4.5e-05 -0.004672 0.867689 0.001749</velocity>
+          <acceleration>-0.35202 -1.11635 0.022059 -1.9702 1.33762 0.672645</acceleration>
+          <wrench>-3.87222 -12.2799 0.242645 0 -0 0</wrench>
         </link>
         <link name='rear_right_wheel'>
-          <pose>93.4967 -10.8302 0.336647 -0.045071 8e-06 -1.56881</pose>
-          <velocity>6e-06 -2e-06 2.5e-05 2e-06 1.6e-05 -0</velocity>
-          <acceleration>0.000157 -2.6e-05 1.1e-05 0.000146 0.000286 -0.000219</acceleration>
-          <wrench>0.001726 -0.000287 0.000121 0 -0 0</wrench>
+          <pose>94.2539 -10.8269 0.336647 2.44281 7e-06 -1.56686</pose>
+          <velocity>0.273231 0.001457 3.3e-05 -0.004651 0.86188 0.002091</velocity>
+          <acceleration>-1.39296 -1.11693 -0.003666 -2.15662 1.50694 0.671151</acceleration>
+          <wrench>-15.3226 -12.2863 -0.04033 0 -0 0</wrench>
         </link>
         <link name='steering_wheel'>
-          <pose>91.4212 -11.9781 1.02488 -1.3021 0.001364 -1.56843</pose>
-          <velocity>8e-06 -1e-06 2.2e-05 0.000291 4e-06 8e-05</velocity>
-          <acceleration>1.3e-05 0.000392 -0.000309 0.168682 0.00033 0.040512</acceleration>
-          <wrench>1.3e-05 0.000392 -0.000309 0 -0 0</wrench>
+          <pose>92.1805 -11.9788 1.02488 -1.3021 0.004137 -1.56572</pose>
+          <velocity>0.27561 -0.001574 0.00029 -0.000262 1.8e-05 0.001929</velocity>
+          <acceleration>-0.636717 -1.48934 0.573972 -0.130076 -0.009415 1.02052</acceleration>
+          <wrench>-0.636717 -1.48934 0.573972 0 -0 0</wrench>
         </link>
       </model>
       <model name='PR002'>
-        <pose>92.8167 -16.1221 0.036641 -2e-06 0 -1.57318</pose>
+        <pose>92.8168 -16.1221 0.036641 -2e-06 0 -1.57318</pose>
         <scale>1 1 1</scale>
         <link name='camera_link'>
-          <pose>91.3146 -17.0185 0.736643 -2e-06 0.3 -1.57318</pose>
-          <velocity>7e-06 -1e-06 2.5e-05 0 3e-06 0</velocity>
-          <acceleration>-0.000186 0.000616 -6.4e-05 6.5e-05 -4e-06 -0.000224</acceleration>
-          <wrench>-0.000186 0.000616 -6.4e-05 0 -0 0</wrench>
+          <pose>91.3147 -17.0185 0.736643 -2e-06 0.3 -1.57318</pose>
+          <velocity>7e-06 -1e-06 2.6e-05 0 3e-06 0</velocity>
+          <acceleration>0.00016 -0.000539 8e-06 -8e-06 0 0.000177</acceleration>
+          <wrench>0.00016 -0.000539 8e-06 0 -0 0</wrench>
         </link>
         <link name='camera_rgb_optical_frame'>
-          <pose>91.3146 -17.0185 0.736643 -2e-06 0.3 -1.57318</pose>
-          <velocity>7e-06 -1e-06 2.5e-05 0 3e-06 0</velocity>
-          <acceleration>-0.000209 0.000611 -7e-05 6.5e-05 -3e-06 -0.000222</acceleration>
-          <wrench>-7e-06 2.1e-05 -2e-06 0 -0 0</wrench>
+          <pose>91.3147 -17.0185 0.736643 -2e-06 0.3 -1.57318</pose>
+          <velocity>7e-06 -1e-06 2.6e-05 0 3e-06 0</velocity>
+          <acceleration>0.000177 -0.000539 8e-06 -8e-06 0 0.000177</acceleration>
+          <wrench>6e-06 -1.9e-05 0 0 -0 0</wrench>
         </link>
         <link name='chassis'>
-          <pose>92.8167 -16.1221 0.036641 -2e-06 0 -1.57318</pose>
-          <velocity>4e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
-          <acceleration>2e-05 0.000343 6e-06 0.00034 -2e-06 -0.000227</acceleration>
-          <wrench>0.026033 0.454395 0.008447 0 -0 0</wrench>
+          <pose>92.8168 -16.1221 0.036641 -2e-06 0 -1.57318</pose>
+          <velocity>5e-06 -1e-06 2.1e-05 0 3e-06 0</velocity>
+          <acceleration>1e-06 -0.000323 -0 3e-06 -0 0.000177</acceleration>
+          <wrench>0.001175 -0.428904 -0.000105 0 -0 0</wrench>
         </link>
         <link name='front_camera_link'>
           <pose>90.6166 -16.1928 0.736645 0 0.249998 -3.12318</pose>
           <velocity>7e-06 -1e-06 2.7e-05 0 3e-06 0</velocity>
-          <acceleration>2e-06 0.000784 -9e-06 6.6e-05 -5e-06 -0.000223</acceleration>
-          <wrench>2e-06 0.000784 -9e-06 0 -0 0</wrench>
+          <acceleration>1.4e-05 -0.000662 1e-06 -8e-06 0 0.000177</acceleration>
+          <wrench>1.4e-05 -0.000662 1e-06 0 -0 0</wrench>
         </link>
         <link name='front_camera_rgb_optical_frame'>
           <pose>90.6166 -16.1928 0.736645 0 0.249998 -3.12318</pose>
           <velocity>7e-06 -1e-06 2.7e-05 0 4e-06 0</velocity>
-          <acceleration>2e-06 0.000802 -1e-05 6.9e-05 -5e-06 -0.000217</acceleration>
-          <wrench>0 2.8e-05 -0 0 -0 0</wrench>
+          <acceleration>1.4e-05 -0.000678 1e-06 -8e-06 -0 0.000178</acceleration>
+          <wrench>0 -2.4e-05 0 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel'>
-          <pose>91.4049 -16.8787 0.336646 2.7396 1.7e-05 -1.57299</pose>
-          <velocity>6e-06 1e-06 3.2e-05 -7e-06 1.9e-05 -0.000307</velocity>
-          <acceleration>-9.6e-05 -0.00029 -8.2e-05 0.00174 -0.000175 0.116023</acceleration>
-          <wrench>-0.001055 -0.00319 -0.000899 0 -0 0</wrench>
+          <pose>91.405 -16.8787 0.336646 2.73927 1.5e-05 -1.57301</pose>
+          <velocity>6e-06 -3e-06 3.2e-05 7e-06 1.9e-05 0.000234</velocity>
+          <acceleration>9e-05 -0.000706 -6e-06 0.0041 0.000158 0.04798</acceleration>
+          <wrench>0.000991 -0.007769 -6.3e-05 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel'>
-          <pose>91.4086 -15.3587 0.336646 2.73063 4e-06 -1.57313</pose>
-          <velocity>6e-06 -0 3.2e-05 -1e-06 1.9e-05 -6.4e-05</velocity>
-          <acceleration>0.000115 0.000293 8.4e-05 -0.001578 0.000209 0.026655</acceleration>
-          <wrench>0.00127 0.003218 0.000923 0 -0 0</wrench>
+          <pose>91.4086 -15.3587 0.336646 2.73047 7e-06 -1.57311</pose>
+          <velocity>6e-06 -2e-06 3.2e-05 3e-06 1.9e-05 9e-05</velocity>
+          <acceleration>-8.9e-05 -0.000528 6e-06 0.002994 -0.000163 0.020113</acceleration>
+          <wrench>-0.000979 -0.005813 6.5e-05 0 -0 0</wrench>
+        </link>
+        <link name='hokuyo_link'>
+          <pose>90.6166 -16.1928 0.786645 0 -2e-06 -3.12318</pose>
+          <velocity>7e-06 -1e-06 2.8e-05 0 3e-06 0</velocity>
+          <acceleration>1.4e-05 -0.000663 1e-06 -8e-06 0 0.000177</acceleration>
+          <wrench>0 -0 0 0 -0 0</wrench>
         </link>
         <link name='rear_axle'>
-          <pose>94.2667 -16.1255 0.336642 -3e-06 -4e-06 -1.57318</pose>
-          <velocity>5e-06 -1e-06 1.9e-05 -4e-06 -1e-06 0</velocity>
-          <acceleration>2.1e-05 -3.3e-05 1.3e-05 0.001906 -0.008806 -0.00019</acceleration>
-          <wrench>0.00064 -0.001002 0.000389 0 -0 0</wrench>
+          <pose>94.2668 -16.1255 0.336642 -3e-06 -4e-06 -1.57318</pose>
+          <velocity>6e-06 -1e-06 1.9e-05 -4e-06 -1e-06 0</velocity>
+          <acceleration>-0 -2e-05 -0 0.001723 0.010875 0.000151</acceleration>
+          <wrench>-4e-06 -0.00061 -1e-05 0 -0 0</wrench>
         </link>
         <link name='rear_left_wheel'>
-          <pose>94.2649 -16.9115 0.336647 0.285586 -4e-06 -1.57318</pose>
-          <velocity>5e-06 -1e-06 2.5e-05 -1e-06 1.7e-05 -0</velocity>
-          <acceleration>-8.5e-05 -2.6e-05 7e-06 0.000145 -0.000152 -0.00019</acceleration>
-          <wrench>-0.00093 -0.000285 8.2e-05 0 -0 0</wrench>
+          <pose>94.2649 -16.9115 0.336647 0.285443 -4e-06 -1.57318</pose>
+          <velocity>6e-06 -1e-06 2.5e-05 -1e-06 1.7e-05 -0</velocity>
+          <acceleration>9e-05 -1.6e-05 -0 8.7e-05 0.000163 0.000151</acceleration>
+          <wrench>0.000992 -0.000176 -2e-06 0 -0 0</wrench>
         </link>
         <link name='rear_right_wheel'>
-          <pose>94.2686 -15.3395 0.336647 -0.431972 8e-06 -1.57318</pose>
+          <pose>94.2687 -15.3395 0.336647 -0.432214 8e-06 -1.57318</pose>
           <velocity>6e-06 -2e-06 2.5e-05 2e-06 1.6e-05 -0</velocity>
-          <acceleration>0.000158 -2.7e-05 1.1e-05 0.000149 0.000288 -0.00022</acceleration>
-          <wrench>0.001739 -0.000294 0.000122 0 -0 0</wrench>
+          <acceleration>-0.000118 -1.6e-05 0 8.9e-05 -0.000216 0.000173</acceleration>
+          <wrench>-0.0013 -0.000177 1e-06 0 -0 0</wrench>
         </link>
         <link name='steering_wheel'>
-          <pose>92.188 -16.4783 1.02488 -1.3021 0.001372 -1.5728</pose>
-          <velocity>8e-06 -1e-06 2.2e-05 0.000291 3e-06 8e-05</velocity>
-          <acceleration>1.5e-05 0.000394 -0.000309 0.168682 -0.000407 0.040511</acceleration>
-          <wrench>1.5e-05 0.000394 -0.000309 0 -0 0</wrench>
+          <pose>92.1881 -16.4783 1.02488 -1.3021 0.001378 -1.5728</pose>
+          <velocity>8e-06 -1e-06 2e-05 0.001271 -0 0.00035</velocity>
+          <acceleration>0.000139 -0.000383 -0.00027 0.160662 -0.000383 0.038672</acceleration>
+          <wrench>0.000139 -0.000383 -0.00027 0 -0 0</wrench>
         </link>
       </model>
       <model name='ground'>
@@ -369,7 +381,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>110.43 -13.5682 27.9134 0 1.09424 3.01057</pose>
+        <pose>91.5593 -14.2343 31.3839 3e-06 1.5698 -3.01261</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1092,6 +1104,56 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
+      <link name='hokuyo_link'>
+        <pose>0.076 -2.2 0.75 0 0 -1.55</pose>
+        <inertial>
+          <inertia>
+            <ixx>1e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-06</iyy>
+            <iyz>0</iyz>
+            <izz>1e-06</izz>
+          </inertia>
+          <mass>1e-05</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <sensor name='laser' type='ray'>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>320</samples>
+                <resolution>5</resolution>
+                <min_angle>-1</min_angle>
+                <max_angle>1</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.08</min>
+              <max>8</max>
+              <resolution>0.2</resolution>
+            </range>
+          </ray>
+          <plugin name='PR002_laser' filename='libgazebo_ros_ray_sensor.so'>
+            <ros>
+              <remapping>~/out:=PR002_scan</remapping>
+            </ros>
+            <frame_name>hokuyo_link</frame_name>
+            <output_type>sensor_msgs/LaserScan</output_type>
+          </plugin>
+          <always_on>1</always_on>
+          <update_rate>5</update_rate>
+          <visualize>1</visualize>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
       <link name='front_left_wheel'>
         <pose>0.760002 -1.41 0.3 0 -0 0</pose>
         <inertial>
@@ -1653,6 +1715,21 @@
           </ode>
         </physics>
       </joint>
+      <joint name='hokuyo_joint' type='revolute'>
+        <parent>chassis</parent>
+        <child>hokuyo_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <upper>0</upper>
+            <lower>0</lower>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
       <joint name='front_left_combined_joint' type='universal'>
         <parent>chassis</parent>
         <child>front_left_wheel</child>
@@ -1937,6 +2014,13 @@
         <distortionK3>0.0</distortionK3>
         <distortionT1>0.0</distortionT1>
         <distortionT2>0.0</distortionT2>
+      </plugin>
+      <plugin name='PR002_laser' filename='libgazebo_ros_ray_sensor.so'>
+        <ros>
+          <remapping>~/out:=PR002_scan</remapping>
+        </ros>
+        <frame_name>hokuyo_link</frame_name>
+        <output_type>sensor_msgs/LaserScan</output_type>
       </plugin>
       <pose>92.6349 -15.9024 0.036639 -4e-06 0 -1.56836</pose>
     </model>
@@ -2658,6 +2742,56 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
+      <link name='hokuyo_link'>
+        <pose>0.076 -2.2 0.75 0 0 -1.55</pose>
+        <inertial>
+          <inertia>
+            <ixx>1e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-06</iyy>
+            <iyz>0</iyz>
+            <izz>1e-06</izz>
+          </inertia>
+          <mass>1e-05</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <sensor name='laser' type='ray'>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>320</samples>
+                <resolution>5</resolution>
+                <min_angle>-1</min_angle>
+                <max_angle>1</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.08</min>
+              <max>8</max>
+              <resolution>0.2</resolution>
+            </range>
+          </ray>
+          <plugin name='PR001_laser' filename='libgazebo_ros_ray_sensor.so'>
+            <ros>
+              <remapping>~/out:=PR001_scan</remapping>
+            </ros>
+            <frame_name>hokuyo_link</frame_name>
+            <output_type>sensor_msgs/LaserScan</output_type>
+          </plugin>
+          <always_on>1</always_on>
+          <update_rate>5</update_rate>
+          <visualize>1</visualize>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
       <link name='front_left_wheel'>
         <pose>0.76 -1.41 0.3 0 -0 0</pose>
         <inertial>
@@ -3219,6 +3353,21 @@
           </ode>
         </physics>
       </joint>
+      <joint name='hokuyo_joint' type='revolute'>
+        <parent>chassis</parent>
+        <child>hokuyo_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <upper>0</upper>
+            <lower>0</lower>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
       <joint name='front_left_combined_joint' type='universal'>
         <parent>chassis</parent>
         <child>front_left_wheel</child>
@@ -3504,7 +3653,14 @@
         <distortionT1>0.0</distortionT1>
         <distortionT2>0.0</distortionT2>
       </plugin>
-      <pose>92.9187 -11.7007 0.03664 -3e-06 -0 -1.57027</pose>
+      <plugin name='PR001_laser' filename='libgazebo_ros_ray_sensor.so'>
+        <ros>
+          <remapping>~/out:=PR001_scan</remapping>
+        </ros>
+        <frame_name>hokuyo_link</frame_name>
+        <output_type>sensor_msgs/LaserScan</output_type>
+      </plugin>
+      <pose>92.6349 -15.9024 0.036639 -4e-06 0 -1.56836</pose>
     </model>
     <model name='Hill'>
       <link name='hill_model'>

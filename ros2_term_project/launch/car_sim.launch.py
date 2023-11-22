@@ -81,8 +81,8 @@ def generate_launch_description():
     # 실행 목록에 추가
     ld.add_action(declare_argument)
     ld.add_action(gazebo_run)
-    ld.add_action(controller)
-    ld.add_action(line_follower)
-    ld.add_action(starter)
+    # ld.add_action(controller)
+    # ld.add_action(line_follower)
+    # ld.add_action(starter)
 
     return ld
