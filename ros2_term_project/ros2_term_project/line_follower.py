@@ -18,6 +18,7 @@ class LineFollower(Node):
         self.end_line_tracker = end_line_tracker
         self.bridge = cv_bridge.CvBridge()
         self.car = sys.argv[1]
+        self.turn = False
         if self.car == 'PR001':
             self._image_subscription = self.create_subscription(Image, '/demo/PR001_camera/image_raw',
                                                             self.image_callback, 10)
@@ -36,25 +37,35 @@ class LineFollower(Node):
         img = self.bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
         self.line_tracker.process(img)
         msg = Twist()
-        msg.angular.z = (-1) * self.line_tracker._delta / 150
+        msg.angular.z = (-1) * self.line_tracker._delta / 110
+        if msg.angular.z > 0.3:
+            self.turn = True
+        else:
+            self.turn = False
+
         self.get_logger().info('angular.z = %f' % msg.angular.z)
         self._publisher.publish(msg)
 
     def front_image_callback(self, image: Image):
         img = self.bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
-        self.stop_line_tracker.process(img)
+
         self.end_line_tracker.process(img)
         msg = String()
-        if self.end_line_tracker._delta is not None and self.end_line_tracker._delta < 3:
+        if self.end_line_tracker._delta is not None and not self.turn and self.end_line_tracker._delta < 0.1:
             msg.data = '종료'
             self.get_logger().info('종료')
             self.end_issue_publisher.publish(msg)
             self.destroy_node()
             return
-        if self.stop_line_tracker._delta is not None and self.stop_line_tracker._delta < 0.005:
+        self.stop_line_tracker.process(img)
+        if self.stop_line_tracker._delta is not None and not self.turn and self.stop_line_tracker._delta < 0.01:
             msg.data = '정지'
-            self.get_logger().info('정지')
             self.stop_issue_publisher.publish(msg)
+        else:
+            msg.data = ''
+            self.end_issue_publisher.publish(msg)
+            self.stop_issue_publisher.publish(msg)
+
 
 
 def main(args=None):

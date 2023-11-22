@@ -16,6 +16,7 @@ class EndLineTracker:
         search_top = int(11 * h / 100)
         search_bot = int(h / 3)
 
+
         mask[0:search_top, 0:w] = 0
         mask[search_bot:h, 0:w] = 0
         mask[0:h, 0:int(w / 4)] = 0

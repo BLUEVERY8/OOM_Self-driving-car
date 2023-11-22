@@ -23,7 +23,7 @@ class LineTracker:
             cy = int(M['m01'] / M['m00'])
             cv2.circle(img, (cx, cy), 20, (0, 0, 255), -1)
             # BEGIN CONTROL
-            err = cy - 2*h/3
+            err = cy - 3*h/4
             self._delta = err
             # END CONTROL
         cv2.imshow("window", img)

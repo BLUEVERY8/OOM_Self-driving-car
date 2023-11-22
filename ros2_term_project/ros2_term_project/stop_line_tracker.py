@@ -9,8 +9,9 @@ class StopLineTracker:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
         lower_white = numpy.array([0, 0, 200])
         upper_white = numpy.array([180, 255, 255])
-
+        self._delta = None
         mask = cv2.inRange(hsv, lower_white, upper_white)
+
 
         h, w, d = img.shape
         search_top = int(7*h / 20)
