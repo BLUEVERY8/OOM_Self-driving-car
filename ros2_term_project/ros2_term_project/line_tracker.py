@@ -10,13 +10,16 @@ class LineTracker:
         lower_white = numpy.array([0, 0, 200])
         upper_white = numpy.array([180, 255, 255])
 
+        # 흰색 식별
         mask = cv2.inRange(hsv, lower_white, upper_white)
 
         h, w, d = img.shape
         search_top = int(h / 3)
 
+        # 마스킹
         mask[0:search_top, 0:w] = 0
 
+        # 차선 검출
         M = cv2.moments(mask)
         if M['m00'] > 0:
             cx = int(M['m10'] / M['m00'])
@@ -26,14 +29,17 @@ class LineTracker:
             err = cy - 3*h/4
             self._delta = err
             # END CONTROL
+
+        # 카메라에서 오는 이미지 정보 띄워줌
         cv2.imshow("window", img)
         cv2.imshow("mask", mask)
         cv2.waitKey(3)
 
+        # Decorator
         @property
         def _delta(self):
             return self._delta
-
+# 테스트 코드
 def main():
     tracker = LineTracker()
     import time
