@@ -33,6 +33,7 @@ car = 'PR001'
 
 def generate_launch_description():
     # configuration
+    # 월드 파일 설정
     world = LaunchConfiguration('world')
     print('world =', world)
     world_file_name = 'test_track.world'
@@ -40,17 +41,18 @@ def generate_launch_description():
                          'worlds', world_file_name)
     print('world file name = %s' % world)
 
-
-    # ld = LaunchDescription()
+    # 가제보 내 시간 사용
     declare_argument = DeclareLaunchArgument(
         'use_sim_time',
         default_value='true',
         description='Use simulation (Gazebo) clock if true')
 
+    # 가제보 실행
     gazebo_run = ExecuteProcess(
         cmd=['gazebo', '-s', 'libgazebo_ros_factory.so', world],
         output='screen')
 
+    # 지정된 차량 정보를 전달하는 노드
     starter = Node(
         package='ros2_term_project',
         executable='starter',
@@ -59,6 +61,7 @@ def generate_launch_description():
         output='screen'
     )
 
+    # 차량의 주행을 관리하는 노드
     controller = Node(
         package='ros2_term_project',
         executable='controller',
@@ -66,6 +69,7 @@ def generate_launch_description():
         output='screen'
     )
 
+    # 차선, 정지선, 종료선 등에 관한 정보를 처리하는 노드
     line_follower = Node(
         package='ros2_term_project',
         executable='line_follower',
@@ -74,13 +78,11 @@ def generate_launch_description():
         output='screen'
     )
 
+    # 실행 목록에 추가
     ld.add_action(declare_argument)
     ld.add_action(gazebo_run)
     ld.add_action(controller)
     ld.add_action(line_follower)
     ld.add_action(starter)
-
-
-    # spawn prius_hybrid
 
     return ld

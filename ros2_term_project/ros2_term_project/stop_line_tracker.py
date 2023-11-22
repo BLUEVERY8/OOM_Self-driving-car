@@ -10,18 +10,21 @@ class StopLineTracker:
         lower_white = numpy.array([0, 0, 200])
         upper_white = numpy.array([180, 255, 255])
         self._delta = None
-        mask = cv2.inRange(hsv, lower_white, upper_white)
 
+        # 흰색 식별
+        mask = cv2.inRange(hsv, lower_white, upper_white)
 
         h, w, d = img.shape
         search_top = int(7*h / 20)
         search_bot = int(h/2)
 
+        # 마스킹
         mask[0:search_top, 0:w] = 0
         mask[search_bot:h, 0:w] = 0
         mask[0:h, 0:int(2 * w / 5)] = 0
         mask[0:h, int(3 * w / 5):w] = 0
 
+        # 정지선 검출
         M = cv2.moments(mask)
         if M['m00'] > 0:
             cx = int(M['m10'] / M['m00'])
@@ -31,14 +34,17 @@ class StopLineTracker:
             err = abs(cx - w / 2)
             self._delta = err
             # END CONTROL
+
+        # 카메라에서 오는 이미지 정보 띄워줌
         cv2.imshow("front_window", img)
         cv2.imshow("front_mask", mask)
         cv2.waitKey(3)
 
+        # Decorator
         @property
         def _delta(self):
             return self._delta
-
+# 테스트 코드
 def main():
     tracker = StopLineTracker()
     import time
