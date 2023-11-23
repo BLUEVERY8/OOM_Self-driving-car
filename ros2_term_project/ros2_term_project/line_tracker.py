@@ -14,7 +14,7 @@ class LineTracker:
         mask = cv2.inRange(hsv, lower_white, upper_white)
 
         h, w, d = img.shape
-        search_top = int(h / 3)
+        search_top = int(h / 2)
 
         # 마스킹
         mask[0:search_top, 0:w] = 0

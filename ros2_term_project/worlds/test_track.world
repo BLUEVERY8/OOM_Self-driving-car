@@ -1122,10 +1122,10 @@
           <ray>
             <scan>
               <horizontal>
-                <samples>320</samples>
+                <samples>160</samples>
                 <resolution>5</resolution>
-                <min_angle>-1</min_angle>
-                <max_angle>1</max_angle>
+                <min_angle>-0.5</min_angle>
+                <max_angle>0.5</max_angle>
               </horizontal>
               <vertical>
                 <samples>1</samples>
@@ -1141,6 +1141,7 @@
           </ray>
           <plugin name='PR002_laser' filename='libgazebo_ros_ray_sensor.so'>
             <ros>
+              <namespace>demo</namespace>
               <remapping>~/out:=PR002_scan</remapping>
             </ros>
             <frame_name>hokuyo_link</frame_name>
@@ -2017,6 +2018,7 @@
       </plugin>
       <plugin name='PR002_laser' filename='libgazebo_ros_ray_sensor.so'>
         <ros>
+          <namespace>demo</namespace>
           <remapping>~/out:=PR002_scan</remapping>
         </ros>
         <frame_name>hokuyo_link</frame_name>
@@ -2760,10 +2762,10 @@
           <ray>
             <scan>
               <horizontal>
-                <samples>320</samples>
+                <samples>160</samples>
                 <resolution>5</resolution>
-                <min_angle>-1</min_angle>
-                <max_angle>1</max_angle>
+                <min_angle>-0.5</min_angle>
+                <max_angle>0.5</max_angle>
               </horizontal>
               <vertical>
                 <samples>1</samples>
@@ -2779,6 +2781,7 @@
           </ray>
           <plugin name='PR001_laser' filename='libgazebo_ros_ray_sensor.so'>
             <ros>
+              <namespace>demo</namespace>
               <remapping>~/out:=PR001_scan</remapping>
             </ros>
             <frame_name>hokuyo_link</frame_name>
@@ -3655,6 +3658,7 @@
       </plugin>
       <plugin name='PR001_laser' filename='libgazebo_ros_ray_sensor.so'>
         <ros>
+          <namespace>demo</namespace>
           <remapping>~/out:=PR001_scan</remapping>
         </ros>
         <frame_name>hokuyo_link</frame_name>
@@ -5628,5 +5632,38 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose>82.4265 -61.0909 -0.049998 0 -0 0</pose>
     </model>
+    <actor name="actor_walking">
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <animation name="walk">
+        <filename>walk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walk" tension="0.6">
+            <waypoint>
+                <time>0</time>
+                <pose>127 -41 0 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>10</time>
+                <pose>139 -41 0 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>14</time>
+                <pose>139 -41 0 0 0 -3.0</pose>
+            </waypoint>
+            <waypoint>
+                <time>24</time>
+                <pose>127 -41 0 0 0 -3.0</pose>
+            </waypoint>
+            <waypoint>
+                <time>28</time>
+                <pose>127 -41 0 0 0 0</pose>
+            </waypoint>
+        </trajectory>
+      </script>
+    </actor>
   </world>
 </sdf>

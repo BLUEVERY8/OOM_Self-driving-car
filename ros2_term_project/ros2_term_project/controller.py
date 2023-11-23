@@ -50,9 +50,9 @@ class Controller(Node):
             else:
                 msg.linear.x = 6.0
             self.twist_publisher_.publish(msg)
+            self.get_logger().info('선속도: %f' % msg.linear.x)
     def stop_listener_callback(self, issue: String):
         msg = Twist()
-        self.get_logger().info('count: %d' % self.count)
         # 정지선 감지
         if not self.stop and issue.data == '정지' and self.count < 2:
             self.stop = True

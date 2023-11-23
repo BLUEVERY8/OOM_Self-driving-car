@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image, LaserScan
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
 from .line_tracker import LineTracker
@@ -23,7 +23,10 @@ class LineFollower(Node):
         self.bridge = cv_bridge.CvBridge()
         # 지정 차량 정보
         self.car = sys.argv[1]
+        # 회전 여부
         self.turn = False
+        # 장애물 여부
+        self.obstacle_found = False
 
         # 지정된 차량에 맞게 해당 카메라 subscription 생성
         if self.car == 'PR001':
@@ -31,17 +34,23 @@ class LineFollower(Node):
                                                                 self.image_callback, 10)
             self.front_image_subscription_ = self.create_subscription(Image, '/demo/PR001_front_camera/image_raw',
                                                                       self.front_image_callback, 10)
+            self.lidar_subscription_ = self.create_subscription(LaserScan, '/demo/PR001_scan', self.scan_callback, 10)
+            self.publisher_ = self.create_publisher(Twist, '/demo/PR001_cmd_demo', 10)
         elif self.car == 'PR002':
             self.image_subscription_ = self.create_subscription(Image, '/demo/PR002_camera/image_raw',
                                                                 self.image_callback, 10)
             self.front_image_subscription_ = self.create_subscription(Image, '/demo/PR002_front_camera/image_raw',
                                                                       self.front_image_callback, 10)
+            self.lidar_subscription_ = self.create_subscription(LaserScan, '/demo/PR002_scan', self.scan_callback, 10)
+            self.publisher_ = self.create_publisher(Twist, '/demo/PR002_cmd_demo', 10)
+
         # 센서로부터 처리한 정보를 보내줄 publisher 생성
         self.twist_publisher_ = self.create_publisher(Twist, 'state_update', 10)
         self.stop_issue_publisher_ = self.create_publisher(String, 'stop_issue_update', 10)
         self.end_issue_publisher_ = self.create_publisher(String, 'end_issue_update', 10)
 
     def image_callback(self, image: Image):
+        if self.obstacle_found: return
         # ros image를 opencv image로 변환
         img = self.bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
 
@@ -58,10 +67,10 @@ class LineFollower(Node):
         else:
             self.turn = False
 
-        self.get_logger().info('angular.z = %f' % msg.angular.z)
         self.twist_publisher_.publish(msg)
 
     def front_image_callback(self, image: Image):
+        if self.obstacle_found: return
         img = self.bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
 
         self.end_line_tracker.process(img)
@@ -83,6 +92,18 @@ class LineFollower(Node):
             self.end_issue_publisher_.publish(msg)
             self.stop_issue_publisher_.publish(msg)
 
+    def scan_callback(self, msg: LaserScan):
+        twist = Twist()
+        min_distance = min(msg.ranges)
+        self.get_logger().info('min_distance: %f' % min_distance)
+        if min_distance < 8.0:
+            self.obstacle_found = True
+            twist.linear.x = 0.0
+            self.publisher_.publish(twist)
+        else:
+            self.obstacle_found = False
+            twist.linear.x = 6.0
+            self.publisher_.publish(twist)
 
 
 def main(args=None):
