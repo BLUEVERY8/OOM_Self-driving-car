@@ -69,20 +69,64 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 차선, 정지선, 종료선 등에 관한 정보를 처리하는 노드
+    # 차선 정보를 처리하는 노드
     line_follower = Node(
         package='ros2_term_project',
         executable='line_follower',
         name='line_follower',
-        arguments=[car],
+        output='screen'
+    )
+
+    # 종료선 정보를 처리하는 노드
+    end_line_detector = Node(
+        package='ros2_term_project',
+        executable='end_line_detector',
+        name='end_line_detector',
+        output='screen'
+    )
+
+    # 정지선 정보를 처리하는 노드
+    stop_line_detector = Node(
+        package='ros2_term_project',
+        executable='stop_line_detector',
+        name='stop_line_detector',
+        output='screen'
+    )
+
+    # 장애물을 감지하는 노드
+    obstacle_detector = Node(
+        package='ros2_term_project',
+        executable='obstacle_detector',
+        name='obstacle_detector',
+        output='screen'
+    )
+
+    # 보행자를 감지하는 노드
+    actor_detect_processor = Node(
+        package='ros2_term_project',
+        executable='actor_detect_processor',
+        name='actor_detect_processor',
+        output='screen'
+    )
+
+    # 움직이는 장애물을 관리하는 노드
+    box_controller = Node(
+        package='ros2_term_project',
+        executable='box_controller',
+        name='box_controller',
         output='screen'
     )
 
     # 실행 목록에 추가
     ld.add_action(declare_argument)
     ld.add_action(gazebo_run)
-    ld.add_action(controller)
+    # ld.add_action(box_controller)
     ld.add_action(line_follower)
+    ld.add_action(end_line_detector)
+    ld.add_action(stop_line_detector)
+    ld.add_action(obstacle_detector)
+    ld.add_action(actor_detect_processor)
+    ld.add_action(controller)
     ld.add_action(starter)
 
     return ld
