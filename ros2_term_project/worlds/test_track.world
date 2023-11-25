@@ -1956,7 +1956,7 @@
         <steering_wheel_joint>steering_joint</steering_wheel_joint>
         <max_steer>0.6458</max_steer>
         <max_steering_angle>7.85</max_steering_angle>
-        <max_speed>20</max_speed>
+        <max_speed>6</max_speed>
         <left_steering_pid_gain>1500 0 1</left_steering_pid_gain>
         <left_steering_i_range>0 0</left_steering_i_range>
         <right_steering_pid_gain>1500 0 1</right_steering_pid_gain>
@@ -3596,7 +3596,7 @@
         <steering_wheel_joint>steering_joint</steering_wheel_joint>
         <max_steer>0.6458</max_steer>
         <max_steering_angle>7.85</max_steering_angle>
-        <max_speed>20</max_speed>
+        <max_speed>6</max_speed>
         <left_steering_pid_gain>1500 0 1</left_steering_pid_gain>
         <left_steering_i_range>0 0</left_steering_i_range>
         <right_steering_pid_gain>1500 0 1</right_steering_pid_gain>
