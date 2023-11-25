@@ -87,7 +87,7 @@ class Controller(Node):
         # 지정 차량
         car = msg.car
         self.get_logger().info('I heard: "%s"' % msg.car)
-         
+
         time.sleep(5)
 
         # 차량에 속도 정보를 전달할 publisher
