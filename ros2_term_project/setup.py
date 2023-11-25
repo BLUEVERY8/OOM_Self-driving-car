@@ -26,7 +26,13 @@ setup(
         'console_scripts': [
             'starter=ros2_term_project.starter:main',
             'controller=ros2_term_project.controller:main',
-            'line_follower=ros2_term_project.line_follower:main'
+            'line_follower=ros2_term_project.end_line_detector:main',
+            'end_line_detector=ros2_term_project.line_follower:main',
+            'stop_line_detector=ros2_term_project.stop_line_detector:main',
+            'obstacle_detector=ros2_term_project.obstacle_detector:main',
+            'actor_detect_processor=ros2_term_project.actor_detect_processor:main',
+            'state_check=ros2_term_project.state_check:main',
+            'box_controller=ros2_term_project.box_controller:main',
         ],
     },
 )
