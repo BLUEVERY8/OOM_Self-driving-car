@@ -47,14 +47,14 @@ class StopLineDetector(Node):
         self.stop_line_tracker.process(img)
 
         # 정지선 확인
-        if self.stop_line_tracker._delta is not None and self.stop_line_tracker._delta < 0.08:
+        if self.stop_line_tracker._delta is not None and self.stop_line_tracker._delta < 3.0:
             msg = String()
             msg.data = '정지'
             self.stop_issue_publisher_.publish(msg)
-
-        msg = String()
-        msg.data = ''
-        self.stop_issue_publisher_.publish(msg)
+        else:
+            msg = String()
+            msg.data = ''
+            self.stop_issue_publisher_.publish(msg)
 
 
 def main(args=None):

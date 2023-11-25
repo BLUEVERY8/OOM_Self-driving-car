@@ -4,7 +4,6 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
 
-
 class BoxController(Node):
 
     def __init__(self):
@@ -19,8 +18,10 @@ class BoxController(Node):
 
     def listener_callback(self, odom: Odometry):
         self.y = odom.pose.pose.position.y
-        self.get_logger().info('y: %f' % self.y)
-        if self.y > -62 or self.y < -79:
+
+        if self.direction == 1 and self.y > -62:
+            self.direction *= -1
+        if self.direction == -1 and self.y < -79:
             self.direction *= -1
 
     def timer_callback(self):

@@ -2689,7 +2689,7 @@
         <sensor name='PR001_front_camera' type='camera'>
           <always_on>1</always_on>
           <visualize>1</visualize>
-          <update_rate>30</update_rate>
+          <update_rate>50</update_rate>
           <camera name='picam'>
             <horizontal_fov>1.0856</horizontal_fov>
             <image>

@@ -109,6 +109,14 @@ def generate_launch_description():
         output='screen'
     )
 
+    # 차량 속도를 확인하는 노
+    vel_check = Node(
+        package='ros2_term_project',
+        executable='vel_check',
+        name='vel_check',
+        output='screen'
+    )
+
     # 움직이는 장애물을 관리하는 노드
     box_controller = Node(
         package='ros2_term_project',
@@ -120,12 +128,13 @@ def generate_launch_description():
     # 실행 목록에 추가
     ld.add_action(declare_argument)
     ld.add_action(gazebo_run)
-    # ld.add_action(box_controller)
+    ld.add_action(box_controller)
     ld.add_action(line_follower)
     ld.add_action(end_line_detector)
     ld.add_action(stop_line_detector)
     ld.add_action(obstacle_detector)
     ld.add_action(actor_detect_processor)
+    ld.add_action(vel_check)
     ld.add_action(controller)
     ld.add_action(starter)
 

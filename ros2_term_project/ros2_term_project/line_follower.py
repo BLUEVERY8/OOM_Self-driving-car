@@ -48,14 +48,13 @@ class LineFollower(Node):
         twist = Twist()
         msg = String()
         twist.angular.z = (-1) * self.line_tracker._delta / 110
-        # self.get_logger().info('angular.z: %f' % twist.angular.z)
 
         # 방향 조정 최대치 설정
         if twist.angular.z > 0.7:
             twist.angular.z = 0.7
 
         # 회전 인식
-        if twist.angular.z > 0.1:
+        if twist.angular.z > 0.08:
             msg.data = '회전'
         else:
             msg.data = '직진'

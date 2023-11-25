@@ -49,14 +49,37 @@ class ActorDetectProcessor(Node):
         # 이미지를 기반으로 보행자 검출
         self.actor_detector.process(img)
 
-        if self.actor_detector._delta is not None and self.actor_detector._delta <= 250:
+        if self.actor_detector._delta is not None and self.actor_detector._delta <= 230:
             msg.data = '보행자 감지'
             self.actor_issue_publisher_.publish(msg)
             self.wait = True
-        elif self.wait and self.actor_detector._delta is None:
-            msg.data = '이동 가능'
+
+        if not self.wait:
+            msg = String()
+            msg.data = ''
             self.actor_issue_publisher_.publish(msg)
             self.wait = False
+
+        if self.wait and self.actor_detector._delta is not None and self.actor_detector._delta > 230:
+            for i in range(20):
+                msg.data = '이동 가능'
+                self.actor_issue_publisher_.publish(msg)
+                time.sleep(0.1)
+
+            self.wait = False
+
+        if self.wait and self.actor_detector._delta is None:
+            for i in range(20):
+                msg.data = '이동 가능'
+                self.actor_issue_publisher_.publish(msg)
+                time.sleep(0.1)
+
+            self.wait = False
+
+
+
+
+
 
 
 def main(args=None):

@@ -44,23 +44,28 @@ class ObstacleDetector(Node):
         min_distance = min(scan.ranges)
         # self.get_logger().info('min_distance: %f' % min_distance)
 
-        if min_distance <= 8.0:
+        if min_distance <= 8.5:
             msg.data = '장애물 감지'
             self.obstacle_issue_publisher_.publish(msg)
             self.wait = True
-        if self.wait and min_distance > 7.5:
-            msg.data = '이동 가능'
-            self.obstacle_issue_publisher_.publish(msg)
-            self.wait = False
+            time.sleep(1)
+            return
 
-        if self.wait and self.wait_time > 40:
-            msg.data = '이동 가능'
+        if not self.wait:
+            msg.data = ''
             self.obstacle_issue_publisher_.publish(msg)
             self.wait = False
-            self.wait_time = 0
-        if self.wait:
-            self.wait_time += 1
-        # self.get_logger().info('wait_time: %d' % self.wait_time)
+        if self.wait and min_distance > 7.5:
+            for i in range(20):
+                msg.data = '이동 가능'
+                self.obstacle_issue_publisher_.publish(msg)
+                time.sleep(0.1)
+            self.wait = False
+            msg.data = ''
+            self.obstacle_issue_publisher_.publish(msg)
+            self.destroy_node()
+            return
+
 
 def main(args=None):
     rclpy.init(args=args)

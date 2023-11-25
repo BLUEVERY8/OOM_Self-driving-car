@@ -16,7 +16,7 @@ class StopLineTracker:
 
         h, w, d = img.shape
         search_top = int(13*h / 40)
-        search_bot = int(8*h/20)
+        search_bot = int(25*h/40)
 
         # 마스킹
         mask[0:search_top, 0:w] = 0

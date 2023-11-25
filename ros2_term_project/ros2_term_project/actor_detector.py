@@ -7,26 +7,22 @@ class ActorDetector:
 
     def process(self, img: np.ndarray) -> None:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-
-        lower_beige = np.array([0, 48, 80])
-        upper_beige = np.array([20, 255, 255])
+        lower_blue = np.array([110, 30, 30])
+        upper_blue = np.array([130, 255, 255])
 
         self._delta = None
 
         # actor 식별
-        mask = cv2.inRange(hsv, lower_beige, upper_beige)
+        mask = cv2.inRange(hsv, lower_blue, upper_blue)
 
         h, w, d = img.shape
-        search_top = int(40*h / 120)
-        # search_top = int(20 * h / 120)
+        search_top = int(35*h / 120)
 
 
         # 마스킹
         mask[0:search_top, 0:w] = 0
-        # mask[0:h, 0:int(w / 8)] = 0
-        # mask[0:h, int(7 * w / 8):w] = 0
-        mask[0:h, 0:int(w / 7)] = 0
-        mask[0:h, int(9 * w / 10):w] = 0
+        mask[0:h, 0:int(w / 15)] = 0
+        mask[0:h, int(14 * w / 15):w] = 0
 
 
         # 정지선 검출
