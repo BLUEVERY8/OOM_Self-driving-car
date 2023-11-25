@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2ffc3669-0089-4fb1-9bc9-8b3e1a715548" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/src.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_interface/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/custom_interface/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_interface/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custom_interface/package.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/launch/car_sim.launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/launch/car_sim.launch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/package.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/end_line_tracker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/end_line_tracker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/line_follower.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/line_follower.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/line_tracker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/line_tracker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/starter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/starter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/stop_line_tracker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/ros2_term_project/stop_line_tracker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/test/spawn_car.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/test/spawn_car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/test/test_copyright.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/test/test_copyright.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/test/test_flake8.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/test/test_flake8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/test/test_pep257.py" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/test/test_pep257.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/worlds/car_track.world" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/worlds/car_track.world" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/worlds/car_track.world.0" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/worlds/car_track.world.0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/worlds/car_track.world.1" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/worlds/car_track.world.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/worlds/car_track.world.2" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/worlds/car_track.world.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/worlds/course.material" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/worlds/course.material" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros2_term_project/worlds/test_track.world" beforeDir="false" afterPath="$PROJECT_DIR$/ros2_term_project/worlds/test_track.world" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2YdKIfYMVyHCJzAKSvFVZmBp5Wg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "line__tracker",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="2ffc3669-0089-4fb1-9bc9-8b3e1a715548" name="변경" comment="" />
+      <created>1700849938828</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700849938828</updated>
+      <workItem from="1700849941526" duration="179000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
