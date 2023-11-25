@@ -31,7 +31,7 @@ setup(
             'stop_line_detector=ros2_term_project.stop_line_detector:main',
             'obstacle_detector=ros2_term_project.obstacle_detector:main',
             'actor_detect_processor=ros2_term_project.actor_detect_processor:main',
-            'vel_check=ros2_term_project.vel_check:main',
+            'state_check=ros2_term_project.state_check:main',
             'box_controller=ros2_term_project.box_controller:main',
         ],
     },

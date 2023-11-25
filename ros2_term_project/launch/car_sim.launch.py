@@ -29,6 +29,7 @@ from launch.substitutions import LaunchConfiguration
 print(os.path.realpath(__file__))
 
 ld = LaunchDescription()
+# 차량 지정
 car = 'PR001'
 
 def generate_launch_description():
@@ -41,7 +42,7 @@ def generate_launch_description():
                          'worlds', world_file_name)
     print('world file name = %s' % world)
 
-    # 가제보 내 시간 사용
+    # 가제보 시간 사용
     declare_argument = DeclareLaunchArgument(
         'use_sim_time',
         default_value='true',
@@ -109,11 +110,11 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 차량 속도를 확인하는 노
-    vel_check = Node(
+    # 차량 속도, 차선 침범 횟수를 확인하는 노드
+    state_check = Node(
         package='ros2_term_project',
-        executable='vel_check',
-        name='vel_check',
+        executable='state_check',
+        name='state_check',
         output='screen'
     )
 
@@ -134,7 +135,7 @@ def generate_launch_description():
     ld.add_action(stop_line_detector)
     ld.add_action(obstacle_detector)
     ld.add_action(actor_detect_processor)
-    ld.add_action(vel_check)
+    ld.add_action(state_check)
     ld.add_action(controller)
     ld.add_action(starter)
 

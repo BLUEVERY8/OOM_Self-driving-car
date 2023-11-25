@@ -19,6 +19,7 @@ class ObstacleDetector(Node):
             10
         )
 
+        # 장애물 감지 정보를 전달하는 publisher
         self.obstacle_issue_publisher_ = self.create_publisher(
             String,
             'obstacle_issue',
@@ -27,12 +28,13 @@ class ObstacleDetector(Node):
 
         self.lidar_subscription_ = None
         self.bridge = cv_bridge.CvBridge()
+        # 장애물 감지
         self.wait = False
         self.wait_time = 0
 
     def car_info_listener_callback(self, msg: String):
         car = msg.data
-        # 차량이 지정되면 주행에 필요한 정보를 받는 subscription 생성
+        # 차량이 지정되면 라이다 정보를 받는 subscription 생성
         self.lidar_subscription_ = self.create_subscription(
             LaserScan,
             '/demo/' + car + '_scan', self.scan_callback,
@@ -42,8 +44,10 @@ class ObstacleDetector(Node):
         msg = String()
 
         min_distance = min(scan.ranges)
-        # self.get_logger().info('min_distance: %f' % min_distance)
+        if min_distance < 12:
+            self.get_logger().info('min_distance: %f' % min_distance)
 
+        # 주행 범위에 장애물이 감지되면
         if min_distance <= 8.5:
             msg.data = '장애물 감지'
             self.obstacle_issue_publisher_.publish(msg)
@@ -55,6 +59,8 @@ class ObstacleDetector(Node):
             msg.data = ''
             self.obstacle_issue_publisher_.publish(msg)
             self.wait = False
+
+        # 장애물이 지나갔을 시
         if self.wait and min_distance > 7.5:
             for i in range(20):
                 msg.data = '이동 가능'

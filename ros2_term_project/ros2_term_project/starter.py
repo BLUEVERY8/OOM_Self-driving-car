@@ -9,6 +9,7 @@ class Starter(Node):
 
     def __init__(self):
         super().__init__('starter')
+        # 지정된 차량 정보를 전달하는 publisher
         self.car_info_publisher_ = self.create_publisher(Target, 'start_car', 10)
         self.test_car = sys.argv[1]
         timer_period = 0.5  # seconds

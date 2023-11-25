@@ -19,6 +19,7 @@ class StopLineDetector(Node):
             10
         )
 
+        # 정지선 감지 정보를 전달하는 publisher
         self.stop_issue_publisher_ = self.create_publisher(
             String,
             'stop_issue',

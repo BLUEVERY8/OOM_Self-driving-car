@@ -18,6 +18,7 @@ class EndLineDetector(Node):
             10
         )
 
+        # 종료 지점 감지 정보를 전달할 publisher
         self.end_issue_publisher_ = self.create_publisher(
             String,
             'end_issue',
@@ -30,7 +31,7 @@ class EndLineDetector(Node):
 
     def car_info_listener_callback(self, msg: String):
         car = msg.data
-        # 차량이 지정되면 주행에 필요한 정보를 받는 subscription 생성
+        # 차량이 지정되면 전방 카메라 정보를 받는 subscription 생성
         self.end_line_image_subscription_ = self.create_subscription(
             Image,
             '/demo/' + car + '_front_camera/image_raw',

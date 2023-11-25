@@ -8,6 +8,7 @@ class EndLineTracker:
     def process(self, img: numpy.ndarray) -> None:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
+        # 노란색 종료 지점 마
         lower_yellow = numpy.array([20, 200, 200])
         upper_yellow = numpy.array([30, 255, 250])
 

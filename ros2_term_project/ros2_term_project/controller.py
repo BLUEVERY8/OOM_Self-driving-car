@@ -108,6 +108,7 @@ class Controller(Node):
 
 
     def twist_listener_callback(self, twist: Twist):
+        # 차선을 따라 주행하기 위한 속도 정보 전달
         if not self.stop and not self.obstacle_found:
             self.twist_publisher_.publish(twist)
 
@@ -134,6 +135,7 @@ class Controller(Node):
 
             self.stop = False
 
+            # 차량 출발
             for i in range(2000):
                 twist.linear.x = 6.0
                 self.twist_publisher_.publish(twist)
@@ -145,11 +147,13 @@ class Controller(Node):
             self.count += 1
             twist = Twist()
 
+            # 3초간 정지
             for i in range(400):
                 twist.linear.x = 0.0
                 self.twist_publisher_.publish(twist)
                 time.sleep(0.01)
 
+            # 차량 출발
             for i in range(200):
                 twist.linear.x = 6.0
                 self.twist_publisher_.publish(twist)
@@ -198,7 +202,7 @@ class Controller(Node):
 
 
     def actor_issue_listener_callback(self, msg: String):
-
+        #보행자가 지나갔을 시
         if self.obstacle_found and msg.data == '이동 가능':
             self.obstacle_found = False
             self.get_logger().info('보행자 통과')
@@ -223,7 +227,7 @@ def main(args=None):
     controller = Controller()
 
     rclpy.spin(controller)
-    # controller.get_logger().info('차선 침범" %d회' % tracker._invasion)
+
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically

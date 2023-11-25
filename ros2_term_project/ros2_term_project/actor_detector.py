@@ -7,6 +7,7 @@ class ActorDetector:
 
     def process(self, img: np.ndarray) -> None:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        # 보행자의 파란 바지
         lower_blue = np.array([110, 30, 30])
         upper_blue = np.array([130, 255, 255])
 
@@ -18,14 +19,13 @@ class ActorDetector:
         h, w, d = img.shape
         search_top = int(35*h / 120)
 
-
         # 마스킹
         mask[0:search_top, 0:w] = 0
         mask[0:h, 0:int(w / 15)] = 0
         mask[0:h, int(14 * w / 15):w] = 0
 
 
-        # 정지선 검출
+        # 보행자 위치 식
         M = cv2.moments(mask)
         if M['m00'] > 0:
             cx = int(M['m10'] / M['m00'])

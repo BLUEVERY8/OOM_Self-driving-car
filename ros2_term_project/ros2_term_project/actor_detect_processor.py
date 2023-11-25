@@ -20,6 +20,7 @@ class ActorDetectProcessor(Node):
             10
         )
 
+        # 보행자 감지 정보를 전달할 publisher
         self.actor_issue_publisher_ = self.create_publisher(
             String,
             'actor_issue',
@@ -29,11 +30,13 @@ class ActorDetectProcessor(Node):
         self.actor_image_subscription_ = None
         self.actor_detector = actor_detector
         self.bridge = cv_bridge.CvBridge()
+
+        # 보행자 감지 상태
         self.wait = False
 
     def car_info_listener_callback(self, msg: String):
         car = msg.data
-        # 차량이 지정되면 주행에 필요한 정보를 받는 subscription 생성
+        # 차량이 지정되면 전방 카메라 정보를 받는 subscription 생성
         self.actor_image_subscription_ = self.create_subscription(
             Image,
             '/demo/' + car + '_front_camera/image_raw',
@@ -46,9 +49,10 @@ class ActorDetectProcessor(Node):
         # ros image를 opencv image로 변환
         img = self.bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
 
-        # 이미지를 기반으로 보행자 검출
+        # 이미지를 기반으로 보행자 감지
         self.actor_detector.process(img)
 
+        # 보행자 감지
         if self.actor_detector._delta is not None and self.actor_detector._delta <= 230:
             msg.data = '보행자 감지'
             self.actor_issue_publisher_.publish(msg)
@@ -60,6 +64,7 @@ class ActorDetectProcessor(Node):
             self.actor_issue_publisher_.publish(msg)
             self.wait = False
 
+        # 보행자가 지나갔을
         if self.wait and self.actor_detector._delta is not None and self.actor_detector._delta > 230:
             for i in range(20):
                 msg.data = '이동 가능'

@@ -36,9 +36,9 @@ class StopLineTracker:
             # END CONTROL
 
         # 카메라에서 오는 이미지 정보 띄워줌
-        cv2.imshow("stop_window", img)
-        cv2.imshow("stop_mask", mask)
-        cv2.waitKey(3)
+        # cv2.imshow("stop_window", img)
+        # cv2.imshow("stop_mask", mask)
+        # cv2.waitKey(3)
 
         # Decorator
         @property

@@ -5,16 +5,24 @@ from std_msgs.msg import String
 import time
 
 
-class VelCheck(Node):
+class StateCheck(Node):
 
     def __init__(self):
-        super().__init__('vel_check')
+        super().__init__('state_check')
 
         # 지정된 차량 정보를 받아올 subscription
         self.car_info_subscription_ = self.create_subscription(
             String,
             'car_info',
             self.car_info_listener_callback,
+            10
+        )
+
+        # 차선 침범 횟수를 받아오는 subscription
+        self.invasion_info_subscription_ = self.create_subscription(
+            String,
+            'invasion_info',
+            self.invasion_info_listener_callback,
             10
         )
 
@@ -31,18 +39,21 @@ class VelCheck(Node):
         self.get_logger().info('선 속도: %f' % twist.linear.x)
         time.sleep(1)
 
+    def invasion_info_listener_callback(self, msg: String):
+        self.get_logger().info('차선 침범: %s' % msg.data)
+
 
 def main(args=None):
     rclpy.init(args=args)
 
-    vel_check = VelCheck()
+    state_check = StateCheck()
 
-    rclpy.spin(vel_check)
+    rclpy.spin(state_check)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    vel_check.destroy_node()
+    state_check.destroy_node()
     rclpy.shutdown()
 
 

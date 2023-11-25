@@ -4,7 +4,9 @@ import numpy
 class LineTracker:
     def __init__(self):
         self._delta = 0.0
-        # self._invasion = 0
+        self._invasion = 0
+        # 차선 침범 시 3초간 
+        self._delay = 0
 
     def process(self, img: numpy.ndarray) -> None:
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -30,8 +32,11 @@ class LineTracker:
             err = cy - 3*h/4
             self._delta = err
             # END CONTROL
-            # if (cy - 51*h/100) < 0 or (99*h/100 - cy) < 0:
-            #     self._invasion += 1
+            # 차선 침범 확인
+            if ((cy - 51*h/100) < 0 or (99*h/100 - cy) < 0) and self.delay < 90:
+                self._invasion += 1
+
+            self.delay += 1
 
         # 카메라에서 오는 이미지 정보 띄워줌
         # cv2.imshow("window", img)
@@ -43,9 +48,9 @@ class LineTracker:
         def _delta(self):
             return self._delta
 
-        # @property
-        # def _invasion(self):
-        #     return self._invasion
+        @property
+        def _invasion(self):
+            return self._invasion
 # 테스트 코드
 def main():
     tracker = LineTracker()
